@@ -6,7 +6,7 @@ import {
   LogOut, ChevronRight, Plus, Pencil, Trash2, X, Save, GraduationCap,
   LayoutDashboard, Layers, Zap, TrendingUp, Search, Phone, Mail,
   CheckCircle2, AlertCircle, BarChart3, ShieldCheck, Check, XCircle,
-  Loader2, Upload, FileText, Image as ImageIcon
+  Loader2, Upload, FileText, Image as ImageIcon, MonitorPlay
 } from 'lucide-react';
 import { supabase, uploadFile } from '../../lib/supabase';
 import { useAuth } from '../../context/AuthContext';
@@ -24,7 +24,9 @@ const sections = [
   { key: 'timetable',  label: 'Timetable',          icon: Calendar },
   { key: 'syllabus',   label: 'Syllabus',           icon: BookOpen },
   { key: 'books',      label: 'Books',              icon: Layers },
+  { key: 'elearning',  label: 'E-Learning',         icon: MonitorPlay },
   { key: 'skills',     label: 'Skill Programs',     icon: Zap },
+  { key: 'recent_events', label: 'Recent Events',    icon: Calendar },
 ];
 
 // ─── Shared UI Components ───────────────────────────────────────────────────────
@@ -422,75 +424,7 @@ function NoticeManager({ data, updateData }) {
   );
 }
 
-// ─── EVENTS MANAGER ────────────────────────────────────────────────────────────
-function EventsManager({ data, updateData, updateNestedData }) {
-  const categories = ['cultural', 'extraCurricular', 'conferences', 'awards', 'social', 'alumni'];
-  const catLabels = { cultural: 'Cultural', extraCurricular: 'Extra Curricular', conferences: 'Conferences', awards: 'Awards', social: 'Social', alumni: 'Alumni' };
-  const catColors = { cultural: '#ec4899', extraCurricular: '#8b5cf6', conferences: '#3b82f6', awards: '#f59e0b', social: '#10b981', alumni: '#6366f1' };
-  const [activeCategory, setActiveCategory] = useState('cultural');
-  const [showModal, setShowModal] = useState(false);
-  const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState({ title: '', date: '', description: '', imageUrl: '', recipient: '' });
 
-  const events = data.events?.[activeCategory] || [];
-  const f = v => setForm(p => ({ ...p, ...v }));
-  const openAdd = () => { setEditing(null); setForm({ title: '', date: new Date().toISOString().split('T')[0], description: '', imageUrl: '', recipient: '' }); setShowModal(true); };
-  const openEdit = item => { setEditing(item); setForm({ ...item }); setShowModal(true); };
-  const handleSave = () => {
-    let updated;
-    if (editing) updated = events.map(x => x.id === editing.id ? { ...x, ...form } : x);
-    else updated = [...events, { ...form, id: Math.max(0, ...events.map(x => x.id), 0) + 1 }];
-    updateNestedData('events', activeCategory, updated);
-    setShowModal(false);
-  };
-  const handleDelete = id => updateNestedData('events', activeCategory, events.filter(x => x.id !== id));
-
-  return (
-    <div>
-      <SectionHeader title="Events Management" count={Object.values(data.events || {}).flat().length} onAdd={openAdd} addLabel="Add Event" />
-      <div className="flex flex-wrap gap-2 mb-4">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
-            style={activeCategory === cat
-              ? { background: catColors[cat], color: '#fff' }
-              : { background: '#f3f4f6', color: '#6b7280' }
-            }
-          >
-            {catLabels[cat]} ({data.events?.[cat]?.length || 0})
-          </button>
-        ))}
-      </div>
-      <div className="space-y-2">
-        {events.length === 0 ? <EmptyState msg={`No ${catLabels[activeCategory]} events yet.`} /> : events.map(item => (
-          <motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: catColors[activeCategory] + '20' }}>
-              <CalendarDays size={14} style={{ color: catColors[activeCategory] }} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="font-semibold text-gray-900 text-sm">{item.title}</p>
-              <p className="text-xs text-gray-500">{item.date}</p>
-              {item.description && <p className="text-xs text-gray-400 mt-1 line-clamp-1">{item.description}</p>}
-            </div>
-            <ActionBtns onEdit={() => openEdit(item)} onDelete={() => handleDelete(item.id)} />
-          </motion.div>
-        ))}
-      </div>
-      {showModal && (
-        <Modal title={editing ? `Edit Event` : `Add ${catLabels[activeCategory]} Event`} onClose={() => setShowModal(false)}>
-          <Field label="Event Title"><Input value={form.title} onChange={v => f({ title: v })} placeholder="Event title…" /></Field>
-          <Field label="Date"><Input type="date" value={form.date} onChange={v => f({ date: v })} /></Field>
-          <Field label="Description"><Textarea value={form.description} onChange={v => f({ description: v })} placeholder="Brief description of the event…" /></Field>
-          {activeCategory === 'awards' && <Field label="Recipient"><Input value={form.recipient} onChange={v => f({ recipient: v })} placeholder="Award recipient name…" /></Field>}
-          <Field label="Event Photo"><FileSelect value={form.imageUrl} onChange={v => f({ imageUrl: v })} /></Field>
-          <SaveBtn onClick={handleSave} label={`${editing ? 'Update' : 'Add'} Event`} />
-        </Modal>
-      )}
-    </div>
-  );
-}
 
 // ─── TOPPER MANAGER ────────────────────────────────────────────────────────────
 function TopperManager({ data, updateData }) {
@@ -533,7 +467,13 @@ function TopperManager({ data, updateData }) {
           <Field label="Student Name"><Input value={form.name} onChange={v => f({ name: v })} placeholder="Full name" /></Field>
           <Field label="Program"><Input value={form.program} onChange={v => f({ program: v })} placeholder="e.g. B.Sc. CS, M.Sc. CS" /></Field>
           <div className="grid grid-cols-3 gap-3">
-            <Field label="Year"><Input value={form.year} onChange={v => f({ year: v })} placeholder="2025" /></Field>
+            <Field label="Year">
+              <select value={form.year} onChange={e => f({ year: e.target.value })} className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:bg-white transition-all text-gray-700">
+                 {Array.from({ length: new Date().getFullYear() - 2015 + 1 }, (_, i) => new Date().getFullYear() - i).map(y => (
+                    <option key={y} value={y}>{y}</option>
+                 ))}
+              </select>
+            </Field>
             <Field label="CGPA"><Input value={form.cgpa} onChange={v => f({ cgpa: v })} placeholder="9.8" /></Field>
             <Field label="Rank"><Input value={form.rank} onChange={v => f({ rank: v })} placeholder="1" /></Field>
           </div>
@@ -913,6 +853,296 @@ function AdminAccessManager({ data, updateData }) {
   );
 }
 
+// ─── EVENTS MANAGER (Main Events Page) ─────────────────────────────────────────
+function EventsManager({ data, updateNestedData }) {
+  const [activeCategory, setActiveCategory] = useState('cultural');
+  const [showModal, setShowModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [form, setForm] = useState({ title: '', date: '', description: '', imageUrl: '' });
+
+  const categories = [
+    { id: 'cultural', label: 'Cultural / Tech Srujana' },
+    { id: 'conferences', label: 'Conferences & Workshops' },
+    { id: 'extraCurricular', label: 'Extra Curricular' },
+    { id: 'awards', label: 'Awards & Felicitation' },
+    { id: 'social', label: 'Social Activities' },
+    { id: 'alumni', label: 'Alumni Events' },
+  ];
+
+  const eventsList = (data.events && data.events[activeCategory]) || [];
+  const f = v => setForm(p => ({ ...p, ...v }));
+
+  const openAdd = () => { setEditing(null); setForm({ title: '', date: new Date().toISOString().split('T')[0], description: '', imageUrl: '' }); setShowModal(true); };
+  const openEdit = item => { setEditing(item); setForm({ ...item }); setShowModal(true); };
+
+  const handleSave = () => {
+    let updated;
+    if (editing) {
+      updated = eventsList.map(x => x.id === editing.id ? { ...x, ...form } : x);
+    } else {
+      updated = [...eventsList, { ...form, id: Math.max(0, ...eventsList.map(x => x.id), 0) + 1 }];
+    }
+    updateNestedData('events', activeCategory, updated);
+    setShowModal(false);
+  };
+
+  const handleDelete = id => {
+    if (window.confirm("Are you sure you want to delete this event?")) {
+      updateNestedData('events', activeCategory, eventsList.filter(x => x.id !== id));
+    }
+  };
+
+  return (
+    <div>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-4 border-b border-gray-100 gap-4">
+        <div>
+          <h2 className="text-xl font-bold text-gray-900">Events Management</h2>
+          <p className="text-sm text-gray-500 mt-1">Manage departmental events across categories</p>
+        </div>
+        <button onClick={openAdd} className="flex items-center gap-2 px-4 py-2 bg-red-800 text-white text-sm font-semibold rounded-xl hover:bg-red-900 transition-colors shrink-0">
+          <Plus size={16} /> Add Event
+        </button>
+      </div>
+
+      {/* Category Tabs */}
+      <div className="flex flex-wrap gap-2 mb-6 border-b border-gray-100 pb-4">
+        {categories.map(cat => (
+          <button
+            key={cat.id}
+            onClick={() => setActiveCategory(cat.id)}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${activeCategory === cat.id ? 'bg-red-50 text-red-800 border-red-200 border' : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-transparent'}`}
+          >
+            {cat.label} ({(data.events && data.events[cat.id]?.length) || 0})
+          </button>
+        ))}
+      </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {eventsList.length === 0 ? <div className="col-span-full"><EmptyState msg={`No events added in ${categories.find(c => c.id === activeCategory)?.label}.`} /></div> : eventsList.map(item => (
+          <motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all group flex flex-col">
+            <div className="h-40 bg-gray-100 relative">
+              {item.imageUrl ? (
+                <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+                  <ImageIcon size={32} className="mb-2 opacity-50" />
+                  <span className="text-xs">No Image</span>
+                </div>
+              )}
+            </div>
+            
+            <div className="p-4 flex-1 flex flex-col">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1 flex items-center gap-1"><Calendar size={10} /> {item.date}</span>
+              <h3 className="font-bold text-gray-900 leading-tight mb-2">{item.title}</h3>
+              {item.recipient && <p className="text-[11px] font-bold text-red-600 uppercase tracking-widest mb-1">⭐ {item.recipient}</p>}
+              {item.description && <p className="text-xs text-gray-500 line-clamp-2 mb-4 flex-1">{item.description}</p>}
+              
+              <div className="flex gap-2 mt-auto pt-4 border-t border-gray-50">
+                <button onClick={() => openEdit(item)} className="flex-1 flex items-center justify-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 text-gray-700 rounded-lg text-xs font-semibold transition-colors">
+                  <Pencil size={14} /> Edit
+                </button>
+                <button onClick={() => handleDelete(item.id)} className="flex items-center justify-center px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-semibold transition-colors shrink-0">
+                  <Trash2 size={14} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      
+      {showModal && (
+        <Modal title={editing ? 'Edit Event' : 'Add New Event'} onClose={() => setShowModal(false)}>
+          <Field label="Category (if changing category, please save and re-check)">
+            <Select value={activeCategory} onChange={setActiveCategory} options={categories.map(c => ({ value: c.id, label: c.label }))} />
+          </Field>
+          <Field label="Event Title"><Input value={form.title} onChange={v => f({ title: v })} placeholder="e.g. Annual Tech Symposium" /></Field>
+          <Field label="Date"><Input type="date" value={form.date} onChange={v => f({ date: v })} /></Field>
+          <Field label="Description"><Textarea value={form.description} onChange={v => f({ description: v })} placeholder="Full description of the event…" rows={4} /></Field>
+          {activeCategory === 'awards' && <Field label="Recipient"><Input value={form.recipient} onChange={v => f({ recipient: v })} placeholder="Award recipient name…" /></Field>}
+          <Field label="Image URL"><Input value={form.imageUrl} onChange={v => f({ imageUrl: v })} placeholder="/Information/Photos/..." /></Field>
+          <SaveBtn onClick={handleSave} label={`${editing ? 'Update' : 'Add'} Event`} />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+// ─── RECENT EVENTS MANAGER ─────────────────────────────────────────────────────
+function RecentEventsManager({ data, updateData }) {
+  const [showModal, setShowModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [form, setForm] = useState({ title: '', date: '', description: '', imageUrl: '' });
+
+  const recentEvents = data.recentEvents || [];
+  const f = v => setForm(p => ({ ...p, ...v }));
+  const openAdd = () => { setEditing(null); setForm({ title: '', date: new Date().toISOString().split('T')[0], description: '', imageUrl: '' }); setShowModal(true); };
+  const openEdit = item => { setEditing(item); setForm({ ...item }); setShowModal(true); };
+  const handleSave = () => {
+    let updated;
+    if (editing) updated = recentEvents.map(x => x.id === editing.id ? { ...x, ...form } : x);
+    else updated = [...recentEvents, { ...form, id: Math.max(0, ...recentEvents.map(x => x.id), 0) + 1 }];
+    updateData('recentEvents', updated);
+    setShowModal(false);
+  };
+  const handleDelete = id => updateData('recentEvents', recentEvents.filter(x => x.id !== id));
+
+  return (
+    <div>
+      <SectionHeader title="Recent Events (Homepage)" count={recentEvents.length} onAdd={openAdd} addLabel="Add Event" />
+      <p className="text-xs text-gray-400 mb-4 -mt-3">These events are displayed in the "Recent Events" section on the homepage.</p>
+      <div className="space-y-2">
+        {recentEvents.length === 0 ? <EmptyState msg="No recent events added. Add events to show on the homepage." /> : recentEvents.map(item => (
+          <motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all">
+            {item.imageUrl && (
+              <div className="w-16 h-12 rounded-lg overflow-hidden shrink-0 bg-gray-100">
+                <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+              </div>
+            )}
+            {!item.imageUrl && (
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ background: '#fce7f3' }}>
+                <Calendar size={14} style={{ color: '#db2777' }} />
+              </div>
+            )}
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-gray-900 text-sm">{item.title}</p>
+              <p className="text-xs text-gray-500">{item.date}</p>
+              {item.description && <p className="text-xs text-gray-400 mt-1 line-clamp-1">{item.description}</p>}
+            </div>
+            <ActionBtns onEdit={() => openEdit(item)} onDelete={() => handleDelete(item.id)} />
+          </motion.div>
+        ))}
+      </div>
+      {showModal && (
+        <Modal title={editing ? 'Edit Recent Event' : 'Add Recent Event'} onClose={() => setShowModal(false)}>
+          <Field label="Event Title"><Input value={form.title} onChange={v => f({ title: v })} placeholder="e.g. Tech Srujana 2025" /></Field>
+          <Field label="Date"><Input type="date" value={form.date} onChange={v => f({ date: v })} /></Field>
+          <Field label="Description"><Textarea value={form.description} onChange={v => f({ description: v })} placeholder="Brief description of the event…" /></Field>
+          <Field label="Event Photo"><FileSelect value={form.imageUrl} onChange={v => f({ imageUrl: v })} /></Field>
+          <SaveBtn onClick={handleSave} label={`${editing ? 'Update' : 'Add'} Event`} />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+// ─── E-LEARNING MANAGER ────────────────────────────────────────────────────────
+function ELearningManager({ data, updateData }) {
+  const courseCategories = ['FY B.Sc. CS', 'SY B.Sc. CS', 'TY B.Sc. CS', 'M.Sc. CS - I', 'M.Sc. CS - II'];
+  const [activeCourse, setActiveCourse] = useState(courseCategories[0]);
+  const [showModal, setShowModal] = useState(false);
+  const [editing, setEditing] = useState(null);
+  const [form, setForm] = useState({ subject: '', semester: 'Semester I', notesUrl: '', youtubeUrl: '', referenceUrl: '' });
+
+  const materialsList = data.studyMaterials?.[activeCourse] || [];
+  const f = v => setForm(p => ({ ...p, ...v }));
+  
+  const openAdd = () => { setEditing(null); setForm({ subject: '', semester: 'Semester I', notesUrl: '', youtubeUrl: '', referenceUrl: '' }); setShowModal(true); };
+  
+  const openEdit = item => { 
+    setEditing(item); 
+    setForm({ 
+      ...item, 
+      notesUrl: item.notesUrl || (item.pdfUrl ? item.pdfUrl : ''),
+    }); 
+    setShowModal(true); 
+  };
+  
+  const handleSave = () => {
+    const updated = data.studyMaterials ? { ...data.studyMaterials } : {};
+    const arr = updated[activeCourse] || [];
+    
+    // Clean up old pdfUrl format if saving
+    const finalForm = { ...form };
+    delete finalForm.pdfUrl;
+    delete finalForm.type;
+
+    if (editing) updated[activeCourse] = arr.map(x => x.id === editing.id ? { ...x, ...finalForm } : x);
+    else updated[activeCourse] = [...arr, { ...finalForm, id: Math.max(0, ...arr.map(x => x.id), 0) + 1 }];
+    updateData('studyMaterials', updated);
+    setShowModal(false);
+  };
+  
+  const handleDelete = id => {
+    if(window.confirm("Delete this subject and its resources?")) {
+      const updated = { ...data.studyMaterials };
+      updated[activeCourse] = (updated[activeCourse] || []).filter(x => x.id !== id);
+      updateData('studyMaterials', updated);
+    }
+  };
+
+  const semGroups = {};
+  materialsList.forEach(m => {
+    if (!semGroups[m.semester]) semGroups[m.semester] = [];
+    semGroups[m.semester].push(m);
+  });
+
+  return (
+    <div>
+      <SectionHeader title="E-Learning Resource Manager" count={Object.values(data.studyMaterials || {}).flat().length} onAdd={openAdd} addLabel="Add Subject Resources" />
+      
+      <div className="flex flex-wrap gap-2 mb-4 mt-2">
+        {courseCategories.map(course => (
+          <button
+            key={course}
+            onClick={() => setActiveCourse(course)}
+            className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all shadow-sm"
+            style={activeCourse === course ? { background: '#6b1a2a', color: '#fff' } : { background: '#f3f4f6', color: '#6b7280' }}
+          >
+            {course} ({data.studyMaterials?.[course]?.length || 0})
+          </button>
+        ))}
+      </div>
+
+      <div className="space-y-4">
+        {materialsList.length === 0 ? <EmptyState msg={`No subjects added for ${activeCourse}.`} /> : null}
+        {Object.entries(semGroups).map(([sem, items]) => (
+          <div key={sem}>
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-1">{sem}</p>
+            <div className="space-y-2">
+              {items.map(item => (
+                <motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-start gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:shadow-md transition-all">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#e0e7ff', color: '#4338ca' }}>
+                    <MonitorPlay size={18} />
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col justify-center mt-1">
+                    <p className="font-semibold text-gray-900 text-sm leading-tight">{item.subject}</p>
+                    <div className="flex items-center gap-2 mt-1.5">
+                      {(item.notesUrl || item.pdfUrl) && <span className="px-2 py-0.5 text-[10px] bg-blue-50 text-blue-600 font-bold rounded uppercase tracking-wider">NOTES</span>}
+                      {item.youtubeUrl && <span className="px-2 py-0.5 text-[10px] bg-red-50 text-red-600 font-bold rounded uppercase tracking-wider">YOUTUBE</span>}
+                      {item.referenceUrl && <span className="px-2 py-0.5 text-[10px] bg-emerald-50 text-emerald-600 font-bold rounded uppercase tracking-wider">LINKS</span>}
+                    </div>
+                  </div>
+                  <div className="mt-1">
+                    <ActionBtns onEdit={() => openEdit(item)} onDelete={() => handleDelete(item.id)} />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {showModal && (
+        <Modal title={editing ? `Edit Subject Resources` : `Add Subject to ${activeCourse}`} onClose={() => setShowModal(false)}>
+          <Field label="Subject / Topic Name"><Input value={form.subject} onChange={v => f({ subject: v })} placeholder="e.g. Problem Solving using C" /></Field>
+          <Field label="Semester"><Input value={form.semester} onChange={v => f({ semester: v })} placeholder="e.g. Semester I" /></Field>
+          
+          <div className="mt-6 mb-4 border-b border-gray-100 pb-2">
+             <h4 className="font-bold text-sm text-gray-900">Resource Links</h4>
+             <p className="text-[11px] text-gray-500">Add the learning materials associated with this subject.</p>
+          </div>
+
+          <Field label="Notes / Study Material (PDF)"><FileSelect value={form.notesUrl || ''} type="pdf" onChange={v => f({ notesUrl: v })} label="Upload Notes" /></Field>
+          <Field label="YouTube Video Link"><Input value={form.youtubeUrl || ''} onChange={v => f({ youtubeUrl: v })} placeholder="e.g. https://youtube.com/watch?v=..." /></Field>
+          <Field label="Google Drive / Reference Link"><Input value={form.referenceUrl || ''} onChange={v => f({ referenceUrl: v })} placeholder="e.g. https://drive.google.com/..." /></Field>
+          
+          <SaveBtn onClick={handleSave} label={`${editing ? 'Update' : 'Add'} Resources`} />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
 // ─── MAIN DASHBOARD ────────────────────────────────────────────────────────────
 export default function AdminDashboard() {
   const { isAuthenticated, logout, currentUser } = useAuth();
@@ -942,8 +1172,10 @@ export default function AdminDashboard() {
       case 'timetable':  return <TimetableManager data={data} updateData={updateData} />;
       case 'syllabus':   return <SyllabusManager data={data} updateData={updateData} />;
       case 'books':      return <BooksManager data={data} updateData={updateData} />;
+      case 'elearning':  return <ELearningManager data={data} updateData={updateData} />;
       case 'skills':     return <SkillManager data={data} updateData={updateData} />;
       case 'admin_access': return <AdminAccessManager data={data} updateData={updateData} />;
+      case 'recent_events': return <RecentEventsManager data={data} updateData={updateData} />;
       default:           return null;
     }
   };

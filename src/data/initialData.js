@@ -10,18 +10,18 @@ export const initialData = {
   ],
 
   faculty: [
-    { id: 1, name: "Prof. Arun D. Gangarde", designation: "Head of Department", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9422224440", experience: "15+ Years" },
-    { id: 2, name: "Prof. M.B. Bhingare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9423176160", experience: "12+ Years" },
-    { id: 3, name: "Prof. M.B. Gobare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9420011597", experience: "10+ Years" },
-    { id: 4, name: "Prof. B.M. Danave", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9403710000", experience: "8+ Years" },
-    { id: 5, name: "Dr. A.A. Takate", designation: "Assistant Professor", qualification: "Ph.D., M.Sc. Computer Science", imageUrl: "", contact: "9404276376", experience: "14+ Years" },
-    { id: 6, name: "Prof. M.A. Karkhile", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9665814300", experience: "9+ Years" },
-    { id: 7, name: "Prof. T.S. Thange", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9822393332", experience: "11+ Years" },
-    { id: 8, name: "Prof. S.S. Kale", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9284278855", experience: "7+ Years" },
-    { id: 9, name: "Prof. M.R. Choudhary", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "", contact: "9049662964", experience: "8+ Years" },
-    { id: 10, name: "Prof. S.B. Khalekar", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Khalekar_Mam.png", contact: "9834756544", experience: "10+ Years" },
-    { id: 11, name: "Prof. M.J. Jasud", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Jasud_Mam.png", contact: "7218566416", experience: "6+ Years" },
-    { id: 12, name: "Prof. K.S. Choure", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Chaure_Mamm_Zoomed.png", contact: "7498487397", experience: "7+ Years" },
+    { id: 1, name: "Prof. Arun D. Gangarde", designation: "Head of Department", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. Arun D. Gangarde.jpeg", contact: "9422224440", experience: "15+ Years" },
+    { id: 2, name: "Prof. M.B. Bhingare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.B. Bhingare.jpeg", contact: "9423176160", experience: "12+ Years" },
+    { id: 3, name: "Prof. M.B. Gobare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.B. Gobare.jpeg", contact: "9420011597", experience: "10+ Years" },
+    { id: 4, name: "Prof. B.M. Danave", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. B.M. Danave.jpeg", contact: "9403710000", experience: "8+ Years" },
+    { id: 5, name: "Dr. A.A. Takate", designation: "Assistant Professor", qualification: "Ph.D., M.Sc. Computer Science", imageUrl: "/Information/teacher img/Dr. A.A. Takate.jpeg", contact: "9404276376", experience: "14+ Years" },
+    { id: 6, name: "Prof. M.A. Karkhile", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.A. Karkhile.jpeg", contact: "9665814300", experience: "9+ Years" },
+    { id: 7, name: "Prof. T.S. Thange", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. T.S. Thange.jpeg", contact: "9822393332", experience: "11+ Years" },
+    { id: 8, name: "Prof. S.S. Kale", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. S.S. Kale.jpeg", contact: "9284278855", experience: "7+ Years" },
+    { id: 9, name: "Prof. M.R. Choudhary", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.R. Choudhary.jpeg", contact: "9049662964", experience: "8+ Years" },
+    { id: 10, name: "Prof. S.B. Khalekar", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. S.B. Khalekar.jpeg", contact: "9834756544", experience: "10+ Years" },
+    { id: 11, name: "Prof. M.J. Jasud", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.J. Jasud.jpeg", contact: "7218566416", experience: "6+ Years" },
+    { id: 12, name: "Prof. K.S. Choure", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. K.S. Choure.jpeg", contact: "7498487397", experience: "7+ Years" },
   ],
 
   timetables: [
@@ -30,6 +30,7 @@ export const initialData = {
     { id: 3, year: "TY B.Sc. CS", pdfUrl: "/Information/Time Table/Sem- I/TY Theory Timetable.docx", semester: "Semester I" },
     { id: 4, year: "M.Sc. CS - I", pdfUrl: "/Information/Time Table/Sem- I/M.Sc. - I Sem- I Theroy Time Table.docx", semester: "Semester I" },
     { id: 5, year: "M.Sc. CS - II", pdfUrl: "/Information/Time Table/Sem- I/M.Sc. - II Sem- III Theroy Time Table.docx", semester: "Semester III" },
+    { id: 12, year: "M.Sc. CS - II", pdfUrl: "/Information/Time Table/Sem- II/M.Sc. - II Sem- IV Theroy Time Table.docx", semester: "Semester IV" },
     { id: 6, year: "FY B.Sc. CS", pdfUrl: "/Information/Time Table/Sem- II/FY Theory Time Table.docx", semester: "Semester II" },
     { id: 7, year: "SY B.Sc. CS", pdfUrl: "/Information/Time Table/Sem- II/SY THEORY TIMETABLE.docx", semester: "Semester II" },
     { id: 8, year: "TY B.Sc. CS", pdfUrl: "/Information/Time Table/Sem- II/TY Theory Timetable.docx", semester: "Semester II" },
@@ -46,22 +47,389 @@ export const initialData = {
     { id: 5, year: "M.Sc. CS - II", level: "PG", semester: "All", syllabusUrl: "/Information/Syllabus/M.SC. CS-II.pdf", pyqUrl: "#" },
   ],
 
-  toppers: [],
+    toppers: [
+      {
+          "id": 1,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2015",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 2,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2015",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 3,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2015",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 4,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2016",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 5,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2016",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 6,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2016",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 7,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2017",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 8,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2017",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 9,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2017",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 10,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2018",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 11,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2018",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 12,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2018",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 13,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2019",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 14,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2019",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 15,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2019",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 16,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2020",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 17,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2020",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 18,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2020",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 19,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2021",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 20,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2021",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 21,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2021",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 22,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2022",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 23,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2022",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 24,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2022",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 25,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2023",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 26,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2023",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 27,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2023",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 28,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2024",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 29,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2024",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 30,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2024",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 31,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2025",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 32,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2025",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 33,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2025",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      },
+      {
+          "id": 34,
+          "name": "Thore Vaishnavi Vijay",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2026",
+          "cgpa": "9.43",
+          "rank": "1",
+          "imageUrl": ""
+      },
+      {
+          "id": 35,
+          "name": "Kule Nikhil Pruthviraj",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2026",
+          "cgpa": "9.45",
+          "rank": "2",
+          "imageUrl": ""
+      },
+      {
+          "id": 36,
+          "name": "Tokekar Himanshu Sudhir",
+          "program": "T.Y. B.Sc. (Comp. Sci.)",
+          "year": "2026",
+          "cgpa": "9.49",
+          "rank": "3",
+          "imageUrl": ""
+      }
+  ],
 
   placements: [],
 
-  trainings: [],
+  trainings: [
+    {
+      id: 1,
+      name: "Certificate Program in Full Stack Java",
+      overview: "Organized by Symbiosis Skills & Professional University's Symbiosis Digital Academy, in collaboration with Capgemini. This comprehensive 3-month program equipped students with industry-ready skills, covering Core Java, Advanced Java, SQL, and Agile Scrum methodologies.",
+      imageUrl: ""
+    },
+    {
+      id: 2,
+      name: "Employability Skill Training Programme",
+      overview: "Conducted by Mahindra Pride Classroom and the Naandi Foundation, this program focuses on essential soft skills beyond academics. It is designed to build self-confidence, develop fluent communication and public speaking skills, and teach students how to interact professionally with others.",
+      imageUrl: ""
+    },
+    {
+      id: 3,
+      name: "7-Day Workshop on Data Analytics using Python",
+      overview: "Organized by the Department of Computer Science, this intensive 7-day workshop provides hands-on knowledge in Python programming and Data Analytics. Students learn to handle real-world datasets by exploring key concepts such as data manipulation (Pandas, NumPy), data visualization (Matplotlib, Seaborn), and foundational statistical analysis.",
+      imageUrl: ""
+    },
+    {
+      id: 4,
+      name: "4-Day Workshop on Android Development using Flutter",
+      overview: "Organized by the Department of Computer Science, this 4-day workshop introduces students to cross-platform mobile application development. Participants gain hands-on experience with the Dart programming language, building interactive UIs using Flutter widgets, state management, and integrating APIs to create dynamic Android apps.",
+      imageUrl: "/Information/flutter_workshop.png"
+    }
+  ],
 
   events: {
     alumni: [],
-    extraCurricular: [],
-    conferences: [],
-    cultural: [
-      { id: 1, title: "Tech Srujana 2025", date: "2025-02-14", description: "Annual technical and cultural festival of the Computer Science Department featuring project exhibitions, coding contests, and cultural performances.", imageUrl: "/Information/Dept Event Photh/DSC_3731.JPG" },
-      { id: 2, title: "Prize Distribution", date: "2025-02-15", description: "Annual prize distribution ceremony for academics and sports events.", imageUrl: "/Information/Dept Event Photh/DSC_7997.JPG" },
-      { id: 3, title: "Cultural Event Showcase", date: "2025-02-13", description: "Students showcasing traditional dances and programs.", imageUrl: "/Information/Dept Event Photh/DSC_8014.JPG" },
+    extraCurricular: [
+      { id: 1, title: "NSS Camp", date: "2025-01-20", description: "National Service Scheme camp organized by the department.", imageUrl: "/Information/Photos/Extra Activity/DSC_3011.JPG" },
+      { id: 2, title: "Blood Donation Drive", date: "2025-02-10", description: "Students participated in the blood donation awareness camp.", imageUrl: "/Information/Photos/Extra Activity/DSC_3016.JPG" },
+      { id: 3, title: "Sports Day", date: "2025-01-15", description: "Annual sports day celebration with various indoor and outdoor events.", imageUrl: "/Information/Photos/Extra Activity/DSC_5037.JPG" },
+      { id: 4, title: "Tree Plantation", date: "2025-03-05", description: "Environmental awareness drive by CS department students.", imageUrl: "/Information/Photos/Extra Activity/IMG-20250203-WA0003.jpg" },
+      { id: 5, title: "Guest Lecture", date: "2025-02-25", description: "Industry expert guest lecture on emerging technologies.", imageUrl: "/Information/Photos/Extra Activity/IMG_0644.JPG" },
     ],
-    awards: [],
+    conferences: [
+      { id: 1, title: "Workshop on Data Analytics", date: "2025-03-15", description: "Hands-on workshop on Data Analytics using Python.", imageUrl: "/Information/Photos/Workshop/76693d43-c967-4ef3-bba8-d826302e139c.jpg" },
+      { id: 2, title: "Technical Workshop", date: "2025-03-20", description: "Departmental workshop on modern web technologies.", imageUrl: "/Information/Photos/Workshop/DSC_3182.JPG" },
+      { id: 3, title: "Seminar on AI & ML", date: "2025-02-28", description: "Seminar on Artificial Intelligence and Machine Learning trends.", imageUrl: "/Information/Photos/Workshop/DSC_8003.JPG" },
+      { id: 4, title: "Cybersecurity Awareness", date: "2025-01-25", description: "Workshop on cybersecurity best practices and ethical hacking.", imageUrl: "/Information/Photos/Workshop/DSC_8007.JPG" },
+      { id: 5, title: "Cloud Computing Session", date: "2025-03-10", description: "Hands-on session on cloud computing platforms.", imageUrl: "/Information/Photos/Workshop/DSC_8011.JPG" },
+    ],
+    cultural: [
+      { id: 1, title: "Tech Srujana 2025", date: "2025-02-14", description: "Annual technical and cultural festival of the Computer Science Department featuring project exhibitions, coding contests, and cultural performances.", imageUrl: "/Information/Photos/Tech Srujana/DSC_2953.JPG" },
+      { id: 2, title: "Tech Srujana - Project Exhibition", date: "2025-02-14", description: "Students showcasing innovative projects and research work.", imageUrl: "/Information/Photos/Tech Srujana/DSC_2970.JPG" },
+      { id: 3, title: "Tech Srujana - Cultural Program", date: "2025-02-14", description: "Cultural performances and entertainment programs by students.", imageUrl: "/Information/Photos/Tech Srujana/DSC_2989.JPG" },
+      { id: 4, title: "Tech Srujana - Inaugural Function", date: "2025-02-14", description: "Inaugural ceremony of Tech Srujana with chief guests.", imageUrl: "/Information/Photos/Tech Srujana/DSC_3061.JPG" },
+    ],
+    awards: [
+      { id: 1, title: "Prize Distribution Ceremony", date: "2025-02-15", description: "Annual prize distribution ceremony for academic and sports achievements.", imageUrl: "/Information/Photos/Awards/20220502114007_IMG_0728.JPG" },
+      { id: 2, title: "Faculty Award Ceremony", date: "2025-01-30", description: "Recognition and awards for outstanding faculty contributions.", imageUrl: "/Information/Photos/Awards/IMG-20250909-WA0097.jpg" },
+      { id: 3, title: "Student Achievement Awards", date: "2025-03-01", description: "Felicitation of students for academic excellence and co-curricular achievements.", imageUrl: "/Information/Photos/Awards/WhatsApp Image 2026-04-10 at 8.49.00 PM.jpeg" },
+    ],
     social: [],
   },
 
@@ -98,6 +466,53 @@ export const initialData = {
 
   skillPrograms: [],
 
+  studyMaterials: {
+    "FY B.Sc. CS": [
+      { 
+        id: 1, 
+        subject: "Problem Solving using C", 
+        semester: "Semester I", 
+        notesUrl: "https://www.w3schools.com/c/c_intro.php", 
+        youtubeUrl: "https://www.youtube.com/watch?v=KJgsSFOSQv0", 
+        referenceUrl: "https://drive.google.com/drive/folders/c-language"
+      },
+      { 
+        id: 2, 
+        subject: "Database Management Systems", 
+        semester: "Semester I", 
+        notesUrl: "https://www.tutorialspoint.com/dbms/index.htm", 
+        youtubeUrl: "https://www.youtube.com/watch?v=dl00fOOYLOM", 
+        referenceUrl: "https://drive.google.com/drive/folders/dbms"
+      },
+      { 
+        id: 3, 
+        subject: "Discrete Mathematics", 
+        semester: "Semester I", 
+        notesUrl: "https://tutorialspoint.com/discrete_mathematics/", 
+        youtubeUrl: "https://www.youtube.com/watch?v=tyDKR4FG3Yw", 
+        referenceUrl: ""
+      },
+      { 
+        id: 4, 
+        subject: "Descriptive Statistics", 
+        semester: "Semester I", 
+        notesUrl: "", 
+        youtubeUrl: "https://www.youtube.com/watch?v=xxpc-HPKN28", 
+        referenceUrl: "https://drive.google.com/drive/folders/stats"
+      }
+    ],
+    "SY B.Sc. CS": [
+      {
+        id: 1,
+        subject: "Data Structures",
+        semester: "Semester III",
+        notesUrl: "https://www.geeksforgeeks.org/data-structures/",
+        youtubeUrl: "https://www.youtube.com/watch?v=8hly31xKli0",
+        referenceUrl: "https://github.com/topics/data-structures"
+      }
+    ]
+  },
+
   admins: [
     { id: 1, name: "Super Admin", username: "superadmin", password: "superadmin123", role: "superadmin" }
   ],
@@ -106,7 +521,7 @@ export const initialData = {
 };
 
 // Keys used in localStorage
-const STORAGE_KEY = 'cs_dept_data_v5';
+const STORAGE_KEY = 'cs_dept_data_v12';
 
 export function loadData() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -116,6 +531,8 @@ export function loadData() {
       // Ensure backwards compatibility for existing localStorage data
       if (!parsed.admins) parsed.admins = [...initialData.admins];
       if (!parsed.adminRequests) parsed.adminRequests = [];
+      if (!parsed.trainings || parsed.trainings.length === 0) parsed.trainings = [...initialData.trainings];
+      if (!parsed.studyMaterials) parsed.studyMaterials = { ...initialData.studyMaterials };
       return parsed;
     } catch {
       return { ...initialData };

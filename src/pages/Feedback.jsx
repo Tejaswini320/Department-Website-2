@@ -17,18 +17,24 @@ export default function Feedback() {
         <p className="text-gray-500 mb-8">We value your feedback. Help us improve our teaching quality and infrastructure.</p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="flex flex-col gap-12">
         {/* Google Form Embed */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <h2 className="text-xl font-bold text-navy mb-4 flex items-center gap-2">
             <MessageSquare size={20} className="text-primary" /> Feedback Form
           </h2>
-          <div className="bg-section-bg rounded-xl border border-gray-100 p-6 min-h-[400px] flex items-center justify-center">
-            <div className="text-center text-gray-400">
-              <MessageSquare size={40} className="mx-auto mb-3" />
-              <p className="text-sm">Google Form Embed Placeholder</p>
-              <p className="text-xs mt-1">Iframe will be embedded here</p>
-            </div>
+          <div className="bg-section-bg rounded-xl border border-gray-100 p-2 min-h-[1200px] flex items-start justify-center overflow-hidden">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSckJwv-SMgNgg_2Au1dIQWpk_eJVI6ghkn8q061n6EXR646AA/viewform?embedded=true"
+              width="100%"
+              height="1300"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              className="w-full h-[1300px] border-0"
+            >
+              Loading…
+            </iframe>
           </div>
         </motion.div>
 

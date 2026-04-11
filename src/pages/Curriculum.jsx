@@ -39,7 +39,7 @@ export default function Curriculum() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-        <h1 className="text-3xl font-bold text-navy mb-2">Curriculum</h1>
+        <h1 className="text-3xl font-bold text-navy mb-2">Syllabus</h1>
         <p className="text-gray-500 mb-8">Access syllabus for all programs.</p>
       </motion.div>
 

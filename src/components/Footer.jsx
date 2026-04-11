@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
-              Empowering students with cutting-edge CS education since 1918. NAAC A++ Accredited (CGPA 3.79).
+              Empowering students with cutting-edge CS education since 1986. NAAC A++ Accredited (CGPA 3.79).
             </p>
             <a
               href="https://newartscollege.ac.in"
@@ -42,7 +42,7 @@ export default function Footer() {
                 { label: 'About College',        path: '/about/college' },
                 { label: 'About Department',     path: '/about/department' },
                 { label: 'Admission',            path: '/admission' },
-                { label: 'Curriculum / Syllabus',path: '/student-corner/curriculum' },
+                { label: 'Syllabus',path: '/student-corner/curriculum' },
                 { label: 'Academic Schedules',   path: '/student-corner/schedules' },
                 { label: 'E-Learning',           path: '/e-learning' },
                 { label: 'Training & Placement', path: '/training-placement' },
