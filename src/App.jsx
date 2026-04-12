@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import NoticeTicker from './components/NoticeTicker';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 // Pages
 import Home from './pages/Home';
@@ -25,6 +26,7 @@ import Events from './pages/Events';
 import SkillDevelopment from './pages/SkillDevelopment';
 import SearchPage from './pages/Search';
 import StudentProjects from './pages/StudentProjects';
+import Contact from './pages/Contact';
 
 // Admin
 import AdminLogin from './pages/admin/AdminLogin';
@@ -46,6 +48,7 @@ function PublicLayout({ children }) {
       <NoticeTicker />
       <main className="min-h-[60vh]">{children}</main>
       <Footer />
+      <Chatbot />
     </>
   );
 }
@@ -80,6 +83,7 @@ function App() {
             <Route path="/admission" element={<PublicLayout><Admission /></PublicLayout>} />
             <Route path="/events" element={<PublicLayout><Events /></PublicLayout>} />
             <Route path="/skill-development" element={<PublicLayout><SkillDevelopment /></PublicLayout>} />
+            <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
 
             {/* Admin */}
             <Route path="/admin" element={<AdminLogin />} />

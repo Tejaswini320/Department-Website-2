@@ -479,7 +479,7 @@ function CareerPathTree({ onSelect }) {
       </motion.div>
 
       {/* ── Career cards grid ── */}
-      <div className="grid grid-cols-2 gap-3 mt-2 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 relative z-10">
         {careerPaths.map((path, i) => {
           const active = hoveredId === path.id;
           return (
@@ -497,73 +497,80 @@ function CareerPathTree({ onSelect }) {
               >
                 {/* Outer glow */}
                 <motion.div
-                  className="absolute -inset-[2px] rounded-2xl"
+                  className="absolute -inset-[3px] rounded-[18px]"
                   animate={{
                     opacity: active ? 1 : 0,
-                    scale: active ? 1 : 0.95,
+                    scale: active ? 1 : 0.98,
                   }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   style={{
-                    background: `linear-gradient(135deg, ${path.dot}55, ${path.accent}55)`,
-                    filter: 'blur(5px)',
+                    background: `linear-gradient(135deg, ${path.dot}60, ${path.accent}60)`,
+                    filter: 'blur(8px)',
                   }}
                 />
 
                 {/* Card body */}
                 <motion.div
-                  className="relative rounded-2xl p-4 border h-full flex flex-col justify-center bg-white/10"
+                  className="relative rounded-2xl p-5 border h-full flex flex-col justify-center bg-white/10 overflow-hidden"
                   animate={{
-                    borderColor: active ? `${path.dot}60` : 'rgba(255,255,255,0.15)',
-                    y: active ? -3 : 0,
+                    borderColor: active ? `${path.dot}80` : 'rgba(255,255,255,0.15)',
+                    y: active ? -4 : 0,
                     boxShadow: active
-                      ? `0 12px 24px ${path.dot}30, 0 4px 10px rgba(0,0,0,0.2)`
-                      : '0 4px 10px rgba(0,0,0,0.1)',
+                      ? `0 20px 30px ${path.dot}40, 0 8px 15px rgba(0,0,0,0.3)`
+                      : '0 4px 10px rgba(0,0,0,0.2)',
                   }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   style={{
-                    backdropFilter: 'blur(10px)',
+                    backdropFilter: 'blur(12px)',
                   }}
                 >
+                  {/* Subtle shine effect on hover */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 -translate-x-[150%]"
+                    animate={{ left: active ? '150%' : '-150%' }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  />
+
                   {/* Corner accent */}
                   <div
-                    className="absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 pointer-events-none rounded-tr-2xl"
+                    className="absolute top-0 right-0 w-24 h-24 transition-opacity duration-500 pointer-events-none rounded-tr-2xl z-0"
                     style={{
-                      background: `radial-gradient(circle at top right, ${path.dot}${active ? '15' : '05'}, transparent 70%)`,
+                      background: `radial-gradient(circle at top right, ${path.dot}${active ? '30' : '10'}, transparent 70%)`,
                     }}
                   />
 
                   {/* Icon + Title */}
-                  <div className="flex items-center gap-3 relative z-10 w-full">
+                  <div className="flex items-start gap-4 relative z-10 w-full mb-1">
                     <motion.div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
                       animate={{
                         background: active
                           ? `linear-gradient(135deg, ${path.dot}, ${path.accent})`
-                          : `${path.dot}10`,
-                        boxShadow: active ? `0 4px 12px ${path.dot}30` : '0 0 0 transparent',
+                          : `${path.dot}20`,
+                        boxShadow: active ? `0 4px 15px ${path.dot}50` : '0 2px 5px transparent',
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.div
                         animate={{ 
                           color: active ? '#ffffff' : path.dot,
-                          scale: active ? 1.1 : 1 
+                          scale: active ? 1.15 : 1 
                         }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.3 }}
                       >
-                        <path.icon size={24} />
+                        <path.icon size={22} />
                       </motion.div>
                     </motion.div>
 
-                    <div className="flex-1 min-w-0 pr-4">
+                    <div className="flex-1 pr-6 flex flex-col justify-center min-h-[48px]">
                       <motion.span
-                        className="text-[15px] font-bold leading-tight block truncate drop-shadow-md"
-                        animate={{ color: active ? path.dot : '#ffffff' }}
+                        className="text-[15px] font-bold leading-tight block drop-shadow"
+                        animate={{ color: active ? '#ffffff' : '#ffffff' }}
                         transition={{ duration: 0.2 }}
                       >
                         {path.title}
                       </motion.span>
-                      <span className="text-[12px] text-white/70 font-medium truncate block mt-0.5">
+                      <span className="text-[12px] text-white/80 font-medium block mt-1.5 leading-snug">
                         {path.roles[0]}
                       </span>
                     </div>
@@ -572,22 +579,23 @@ function CareerPathTree({ onSelect }) {
                   {/* Resting arrow */}
                   <motion.div
                     animate={{ 
-                      x: active ? 3 : 0,
-                      color: active ? path.dot : 'rgba(255,255,255,0.4)'
+                      x: active ? 4 : 0,
+                      scale: active ? 1.2 : 1,
+                      color: active ? '#ffffff' : 'rgba(255,255,255,0.4)',
+                      opacity: active ? 1 : 0.6
                     }}
-                    className="absolute top-1/2 -translate-y-1/2 right-3"
+                    className="absolute top-1/2 -translate-y-1/2 right-4 drop-shadow-md z-10"
                   >
-                    <ArrowRight size={14} strokeWidth={2.5} />
+                    <ArrowRight size={16} strokeWidth={3} />
                   </motion.div>
 
                   {/* Animated bottom gradient bar */}
                   <motion.div
-                    className="absolute bottom-0 left-0 h-[2px]"
+                    className="absolute bottom-0 left-0 h-[3px]"
                     animate={{ width: active ? '100%' : '0%' }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                     style={{
                       background: `linear-gradient(90deg, ${path.dot}, ${path.accent})`,
-                      borderRadius: '0 0 16px 16px',
                     }}
                   />
                 </motion.div>
@@ -604,9 +612,9 @@ function CareerPathTree({ onSelect }) {
         transition={{ delay: 0.6 }}
         className="text-center mt-6 flex justify-center"
       >
-        <p className="text-[10px] text-gray-400 font-medium px-3 py-1 rounded-full bg-white/50 border border-gray-100 shadow-sm">
+        <p className="text-[11px] text-white/90 font-semibold px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-sm backdrop-blur-md">
           <motion.span
-            className="inline-block w-1.5 h-1.5 bg-primary rounded-full mr-1.5 align-middle"
+            className="inline-block w-2 h-2 bg-yellow-400 rounded-full mr-2 align-middle shadow-[0_0_8px_rgba(250,204,21,0.8)]"
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />

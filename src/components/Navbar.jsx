@@ -29,6 +29,7 @@ const navItems = [
   { label: 'Alumni', path: 'https://nacsc-alumni.co.in/', external: true },
   { label: 'Events', path: '/events' },
   { label: 'Online Feedback', path: '/student-corner/feedback' },
+  { label: 'Contact Us', path: '/contact' },
 ];
 
 export default function Navbar() {
