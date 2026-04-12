@@ -39,8 +39,8 @@ export default function Administration() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
             { title: 'Principal', name: 'Dr. B. B. Sagade', imageUrl: '/Information/teacher img/Dr. B. B. Sagade.jpeg', qualification: 'Ph.D.', experience: '20+ Years' },
-            { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', imageUrl: '/Information/teacher img/Dr. A. E. Athare.jpeg', qualification: 'Ph.D.', phone: '9763263275', experience: '15+ Years' },
-            { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', imageUrl: '/Information/teacher img/Dr. S. B. Kalamkar.jpeg', qualification: 'Ph.D.', phone: '9403375734', experience: '15+ Years' },
+            { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', imageUrl: '/Information/teacher img/Dr. A. E. Athare.jpeg', qualification: 'Ph.D.', phone: '9763263275', experience: '20+ Years' },
+            { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', imageUrl: '/Information/teacher img/Dr. S. B. Kalamkar.jpeg', qualification: 'Ph.D.', phone: '9403375734', experience: '20+ Years' },
           ].map(person => (
             <div 
               key={person.title} 

@@ -5,7 +5,7 @@ import {
   ArrowRight, BookOpen, GraduationCap, Users, Award, Trophy,
   FileText, Clock, BarChart2, Lightbulb, MonitorSmartphone,
   MessageSquare, FlaskConical, ExternalLink, Calendar,
-  Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark
+  Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark, Linkedin
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
@@ -705,18 +705,29 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/admission"
+                <a
+                  href="https://nacsc-alumni.co.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/20 hover:-translate-y-0.5"
                 >
-                  Apply Now <ArrowRight size={16} />
-                </Link>
+                  Join Alumni Network <ExternalLink size={16} />
+                </a>
                 <Link
-                  to="/about/department"
+                  to="/admin"
                   className="inline-flex items-center gap-2 px-7 py-3 bg-white/20 text-white font-semibold rounded-xl hover:bg-white/30 border border-white/30 transition-all duration-200 backdrop-blur-sm"
                 >
-                  Know More
+                  Sign In
                 </Link>
+                <a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Computer%20Science%20New%20Arts%20Commerce%20and%20Science%20College%20Ahmednagar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 text-white font-semibold rounded-xl hover:opacity-90 border border-white/30 transition-all duration-200 backdrop-blur-sm shadow-lg hover:-translate-y-0.5"
+                  style={{ backgroundColor: '#0A66C2' }}
+                >
+                  LinkedIn <Linkedin size={16} />
+                </a>
               </div>
 
               {/* quick badges */}

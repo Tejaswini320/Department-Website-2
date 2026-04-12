@@ -10,18 +10,18 @@ export const initialData = {
   ],
 
   faculty: [
-    { id: 1, name: "Prof. Arun D. Gangarde", designation: "Head of Department", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. Arun D. Gangarde.jpeg", contact: "9422224440", experience: "15+ Years" },
-    { id: 2, name: "Prof. M.B. Bhingare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.B. Bhingare.jpeg", contact: "9423176160", experience: "12+ Years" },
-    { id: 3, name: "Prof. M.B. Gobare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.B. Gobare.jpeg", contact: "9420011597", experience: "10+ Years" },
-    { id: 4, name: "Prof. B.M. Danave", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. B.M. Danave.jpeg", contact: "9403710000", experience: "8+ Years" },
-    { id: 5, name: "Dr. A.A. Takate", designation: "Assistant Professor", qualification: "Ph.D., M.Sc. Computer Science", imageUrl: "/Information/teacher img/Dr. A.A. Takate.jpeg", contact: "9404276376", experience: "14+ Years" },
-    { id: 6, name: "Prof. M.A. Karkhile", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.A. Karkhile.jpeg", contact: "9665814300", experience: "9+ Years" },
+    { id: 1, name: "Prof. Arun Dhondiba Gangarde", designation: "Head of Department", qualification: "MCS, MCM, MBA", imageUrl: "/Information/teacher img/Prof. Arun D. Gangarde.jpeg", contact: "9422224440", email: "adgangarde@gmail.com", experience: "35+ Years" },
+    { id: 2, name: "Prof. M.B. Bhingare", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.B. Bhingare.jpeg", contact: "9423176160", email: "", experience: "20+ Years" },
+    { id: 3, name: "Prof. Gobare Manohar Baburao", designation: "Assistant Professor", qualification: "M.Sc. (Computer Science), M.C.A. (Science), M.Phil.", imageUrl: "/Information/teacher img/Prof. M.B. Gobare.jpeg", contact: "9420011597", email: "mgobare@newartsdcs.ac.in", experience: "19+ Years" },
+    { id: 4, name: "Prof. B.M. Danave", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. B.M. Danave.jpeg", contact: "9403710000", email: "", experience: "18+ Years" },
+    { id: 5, name: "Dr. Takate Amit Anilkumar", designation: "Assistant Professor", qualification: "M.Sc. (Computer Science), Ph.D.", imageUrl: "/Information/teacher img/Dr. A.A. Takate.jpeg", contact: "9404276376", email: "atakate@newartsdcs.ac.in", experience: "13+ Years" },
+    { id: 6, name: "Prof. Karkhile M.A", designation: "Assistant Professor", qualification: "M.Sc. (Computer Science)", imageUrl: "/Information/teacher img/Prof. M.A. Karkhile.jpeg", contact: "9665814300", email: "makarkhile@newartsdcs.ac.in", experience: "13+ Years" },
     { id: 7, name: "Prof. T.S. Thange", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. T.S. Thange.jpeg", contact: "9822393332", experience: "11+ Years" },
-    { id: 8, name: "Prof. S.S. Kale", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. S.S. Kale.jpeg", contact: "9284278855", experience: "7+ Years" },
-    { id: 9, name: "Prof. M.R. Choudhary", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.R. Choudhary.jpeg", contact: "9049662964", experience: "8+ Years" },
-    { id: 10, name: "Prof. S.B. Khalekar", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. S.B. Khalekar.jpeg", contact: "9834756544", experience: "10+ Years" },
+    { id: 8, name: "Prof. Kale Supriya Sukhdev", designation: "Assistant Professor", qualification: "M.Sc. (Computer Science), NET, SET", imageUrl: "/Information/teacher img/Prof. S.S. Kale.jpeg", contact: "9284278855", email: "supriya.kale740@gmail.com", experience: "15+ Years" },
+    { id: 9, name: "Prof. Choudhary Manjushree Ramesh", designation: "Assistant Professor", qualification: "M.Sc. (Statistics), B.Ed.", imageUrl: "/Information/teacher img/Prof. M.R. Choudhary.jpeg", contact: "8530804747", email: "manjushriamale.1992@gmail.com", experience: "9+ Years" },
+    { id: 10, name: "Prof. S.B. Khalekar", designation: "Assistant Professor", qualification: "M.Sc. Computer Science (NET, SET)", imageUrl: "/Information/teacher img/Prof. S.B. Khalekar.jpeg", contact: "9834756544", email: "", experience: "10+ Years" },
     { id: 11, name: "Prof. M.J. Jasud", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. M.J. Jasud.jpeg", contact: "7218566416", experience: "6+ Years" },
-    { id: 12, name: "Prof. K.S. Choure", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. K.S. Choure.jpeg", contact: "7498487397", experience: "7+ Years" },
+    { id: 12, name: "Prof. K.S. Choure", designation: "Assistant Professor", qualification: "M.Sc. Computer Science", imageUrl: "/Information/teacher img/Prof. K.S. Choure.jpeg", contact: "7498487397", experience: "7+ Years" }
   ],
 
   timetables: [
