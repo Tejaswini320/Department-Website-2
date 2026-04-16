@@ -38,12 +38,12 @@ export default function Administration() {
         </h2>
         <div className="grid md:grid-cols-2 gap-5">
           {[
-            { title: 'Principal', name: 'Dr. B. B. Sagade' },
-            { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare' },
-            { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar' },
+            { title: 'Principal', name: 'Dr. B. B. Sagade', imageUrl: '/Information/teacher img/Dr. B. B. Sagade.jpeg' },
+            { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', imageUrl: '/Information/teacher img/Dr. A. E. Athare.jpeg' },
+            { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', imageUrl: '' },
           ].map(person => (
             <div key={person.title} className="flex items-center gap-4 bg-white rounded-xl p-5 border border-gray-100 hover:shadow-md transition-shadow">
-              <PlaceholderImage label={person.title} height="100px" className="w-24 shrink-0 !rounded-lg" />
+              <PlaceholderImage src={person.imageUrl} label={person.title} height="100px" className="w-24 shrink-0 !rounded-lg" />
               <div>
                 <span className="text-xs font-semibold text-primary uppercase">{person.title}</span>
                 <h3 className="text-lg font-bold text-navy">{person.name}</h3>
@@ -72,6 +72,28 @@ export default function Administration() {
               <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 <span className="text-[10px] font-bold text-primary uppercase tracking-widest border border-primary/20 px-3 py-1 rounded-full">View Profile</span>
               </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Non-Teaching Staff */}
+      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mt-10">
+        <h2 className="text-xl font-bold text-navy mb-4 flex items-center gap-2">
+          <Briefcase size={20} className="text-primary" /> Non-Teaching Staff
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { name: 'Mr. Bharat Deshmukh', designation: 'Lab Assistant', imageUrl: '/Information/teacher img/Bharat Deshmukh.jpeg' },
+            { name: 'Mr. Deepak Athare', designation: 'Lab Attendant', imageUrl: '/Information/teacher img/Deepak Athare.jpeg' },
+          ].map(staff => (
+            <div
+              key={staff.name}
+              className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-all text-center group hover:-translate-y-1"
+            >
+              <PlaceholderImage src={staff.imageUrl} aspect="passport" label="Staff Photo" />
+              <h3 className="font-bold text-navy">{staff.name}</h3>
+              <p className="text-sm text-primary">{staff.designation}</p>
             </div>
           ))}
         </div>

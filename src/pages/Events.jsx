@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, Award, Heart, Lightbulb, PartyPopper } from 'lucide-react';
+import { Calendar, Users, Award, Lightbulb, PartyPopper } from 'lucide-react';
 import PlaceholderImage from '../components/PlaceholderImage';
 import { useData } from '../context/DataContext';
 
@@ -14,7 +14,6 @@ const eventCategories = [
   { key: 'conferences', label: 'Conferences & Workshops', icon: Calendar },
   { key: 'cultural', label: 'Cultural / Tech Srujana', icon: PartyPopper },
   { key: 'awards', label: 'Awards & Felicitation', icon: Award },
-  { key: 'social', label: 'Social Activities', icon: Heart },
 ];
 
 export default function Events() {

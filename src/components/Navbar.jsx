@@ -16,7 +16,7 @@ const navItems = [
     label: 'Student Corner', path: '/student-corner',
     children: [
       { label: 'Academic Schedules', path: '/student-corner/schedules' },
-      { label: 'Curriculum', path: '/student-corner/curriculum' },
+      { label: 'Syllabus', path: '/student-corner/curriculum' },
       { label: 'Results', path: '/student-corner/results' },
       { label: 'Merit List / Toppers', path: '/student-corner/toppers' },
       { label: 'Student Projects', path: '/student-corner/projects' },
