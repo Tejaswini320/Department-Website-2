@@ -36,6 +36,7 @@ export default function Administration() {
         <h2 className="text-xl font-bold text-navy mb-4 flex items-center gap-2">
           <Shield size={20} className="text-primary" /> College Leadership
         </h2>
+<<<<<<< HEAD
         <div className="grid md:grid-cols-2 gap-5">
           {[
             { title: 'Principal', name: 'Dr. B. B. Sagade', imageUrl: '/Information/teacher img/Dr. B. B. Sagade.jpeg' },
@@ -47,6 +48,25 @@ export default function Administration() {
               <div>
                 <span className="text-xs font-semibold text-primary uppercase">{person.title}</span>
                 <h3 className="text-lg font-bold text-navy">{person.name}</h3>
+=======
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { title: 'Principal', name: 'Dr. B. B. Sagade', imageUrl: '/Information/teacher img/Dr. B. B. Sagade.jpeg', qualification: 'Ph.D.', experience: '20+ Years' },
+            { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', imageUrl: '/Information/teacher img/Dr. A. E. Athare.jpeg', qualification: 'Ph.D.', phone: '9763263275', experience: '20+ Years' },
+            { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', imageUrl: '/Information/teacher img/Dr. S. B. Kalamkar.jpeg', qualification: 'Ph.D.', phone: '9403375734', experience: '20+ Years' },
+          ].map(person => (
+            <div 
+              key={person.title} 
+              onClick={() => setSelectedFaculty({ ...person, designation: person.title, contact: person.phone })}
+              className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-all text-center cursor-pointer group hover:-translate-y-1 hover:border-primary/20"
+            >
+              <PlaceholderImage src={person.imageUrl} aspect="passport" label={person.title} />
+              <h3 className="font-bold text-navy group-hover:text-primary transition-colors">{person.name}</h3>
+              <p className="text-sm text-primary">{person.title}</p>
+              <p className="text-xs text-gray-500 mt-1">{person.qualification}</p>
+              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-[10px] font-bold text-primary uppercase tracking-widest border border-primary/20 px-3 py-1 rounded-full">View Profile</span>
+>>>>>>> origin/main
               </div>
             </div>
           ))}
@@ -126,6 +146,7 @@ export default function Administration() {
                   <h2 className="text-2xl font-bold text-navy mb-4">{selectedFaculty.name}</h2>
                   
                   <div className="space-y-4">
+<<<<<<< HEAD
                     <div className="flex items-start gap-3">
                       <GraduationCap className="text-primary shrink-0" size={18} />
                       <div>
@@ -133,6 +154,17 @@ export default function Administration() {
                         <p className="text-sm font-semibold text-gray-700">{selectedFaculty.qualification}</p>
                       </div>
                     </div>
+=======
+                    {selectedFaculty.qualification && (
+                      <div className="flex items-start gap-3">
+                        <GraduationCap className="text-primary shrink-0" size={18} />
+                        <div>
+                          <p className="text-[10px] font-bold text-gray-400 uppercase">Qualification</p>
+                          <p className="text-sm font-semibold text-gray-700">{selectedFaculty.qualification}</p>
+                        </div>
+                      </div>
+                    )}
+>>>>>>> origin/main
                     
                     {selectedFaculty.experience && (
                       <div className="flex items-start gap-3">
@@ -154,6 +186,7 @@ export default function Administration() {
                       </div>
                     )}
                     
+<<<<<<< HEAD
                     <div className="flex items-start gap-3">
                       <Phone className="text-primary shrink-0" size={18} />
                       <div>
@@ -161,11 +194,36 @@ export default function Administration() {
                         <p className="text-sm font-semibold text-gray-700">{selectedFaculty.contact}</p>
                       </div>
                     </div>
+=======
+                    {selectedFaculty.contact && (
+                      <div className="flex items-start gap-3">
+                        <Phone className="text-primary shrink-0" size={18} />
+                        <div>
+                          <p className="text-[10px] font-bold text-gray-400 uppercase">Contact</p>
+                          <p className="text-sm font-semibold text-gray-700">{selectedFaculty.contact}</p>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {selectedFaculty.email && (
+                      <div className="flex items-start gap-3">
+                        <Mail className="text-primary shrink-0" size={18} />
+                        <div>
+                          <p className="text-[10px] font-bold text-gray-400 uppercase">Email</p>
+                          <p className="text-sm font-semibold text-gray-700">{selectedFaculty.email}</p>
+                        </div>
+                      </div>
+                    )}
+>>>>>>> origin/main
                   </div>
 
                   <div className="mt-8 pt-6 border-t border-gray-100">
                      <p className="text-xs text-gray-500 italic leading-relaxed">
+<<<<<<< HEAD
                        {selectedFaculty.name} is a highly experienced {selectedFaculty.designation} with over {selectedFaculty.experience} of dedicated service in the field of Computer Science.
+=======
+                       {selectedFaculty.name} is a highly experienced {selectedFaculty.designation}{selectedFaculty.experience ? ` with over ${selectedFaculty.experience} of dedicated service in the field of Computer Science.` : ' contributing significantly to the institution.'}
+>>>>>>> origin/main
                      </p>
                   </div>
                 </div>

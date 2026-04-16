@@ -5,7 +5,11 @@ import {
   ArrowRight, BookOpen, GraduationCap, Users, Award, Trophy,
   FileText, Clock, BarChart2, Lightbulb, MonitorSmartphone,
   MessageSquare, FlaskConical, ExternalLink, Calendar,
+<<<<<<< HEAD
   Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark
+=======
+  Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark, Linkedin
+>>>>>>> origin/main
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
@@ -479,7 +483,11 @@ function CareerPathTree({ onSelect }) {
       </motion.div>
 
       {/* ── Career cards grid ── */}
+<<<<<<< HEAD
       <div className="grid grid-cols-2 gap-3 mt-2 relative z-10">
+=======
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 relative z-10">
+>>>>>>> origin/main
         {careerPaths.map((path, i) => {
           const active = hoveredId === path.id;
           return (
@@ -497,6 +505,7 @@ function CareerPathTree({ onSelect }) {
               >
                 {/* Outer glow */}
                 <motion.div
+<<<<<<< HEAD
                   className="absolute -inset-[2px] rounded-2xl"
                   animate={{
                     opacity: active ? 1 : 0,
@@ -506,6 +515,17 @@ function CareerPathTree({ onSelect }) {
                   style={{
                     background: `linear-gradient(135deg, ${path.dot}55, ${path.accent}55)`,
                     filter: 'blur(5px)',
+=======
+                  className="absolute -inset-[3px] rounded-[18px]"
+                  animate={{
+                    opacity: active ? 1 : 0,
+                    scale: active ? 1 : 0.98,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    background: `linear-gradient(135deg, ${path.dot}60, ${path.accent}60)`,
+                    filter: 'blur(8px)',
+>>>>>>> origin/main
                   }}
                 />
 
@@ -529,10 +549,38 @@ function CareerPathTree({ onSelect }) {
                     className="absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 pointer-events-none rounded-tr-2xl"
                     style={{
                       background: `radial-gradient(circle at top right, ${path.dot}${active ? '15' : '05'}, transparent 70%)`,
+=======
+                  className="relative rounded-2xl p-5 border h-full flex flex-col justify-center bg-white/10 overflow-hidden"
+                  animate={{
+                    borderColor: active ? `${path.dot}80` : 'rgba(255,255,255,0.15)',
+                    y: active ? -4 : 0,
+                    boxShadow: active
+                      ? `0 20px 30px ${path.dot}40, 0 8px 15px rgba(0,0,0,0.3)`
+                      : '0 4px 10px rgba(0,0,0,0.2)',
+                  }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    backdropFilter: 'blur(12px)',
+                  }}
+                >
+                  {/* Subtle shine effect on hover */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 -translate-x-[150%]"
+                    animate={{ left: active ? '150%' : '-150%' }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  />
+
+                  {/* Corner accent */}
+                  <div
+                    className="absolute top-0 right-0 w-24 h-24 transition-opacity duration-500 pointer-events-none rounded-tr-2xl z-0"
+                    style={{
+                      background: `radial-gradient(circle at top right, ${path.dot}${active ? '30' : '10'}, transparent 70%)`,
+>>>>>>> origin/main
                     }}
                   />
 
                   {/* Icon + Title */}
+<<<<<<< HEAD
                   <div className="flex items-center gap-3 relative z-10 w-full">
                     <motion.div
                       className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -541,12 +589,23 @@ function CareerPathTree({ onSelect }) {
                           ? `linear-gradient(135deg, ${path.dot}, ${path.accent})`
                           : `${path.dot}10`,
                         boxShadow: active ? `0 4px 12px ${path.dot}30` : '0 0 0 transparent',
+=======
+                  <div className="flex items-start gap-4 relative z-10 w-full mb-1">
+                    <motion.div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                      animate={{
+                        background: active
+                          ? `linear-gradient(135deg, ${path.dot}, ${path.accent})`
+                          : `${path.dot}20`,
+                        boxShadow: active ? `0 4px 15px ${path.dot}50` : '0 2px 5px transparent',
+>>>>>>> origin/main
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.div
                         animate={{ 
                           color: active ? '#ffffff' : path.dot,
+<<<<<<< HEAD
                           scale: active ? 1.1 : 1 
                         }}
                         transition={{ duration: 0.2 }}
@@ -572,22 +631,40 @@ function CareerPathTree({ onSelect }) {
                   {/* Resting arrow */}
                   <motion.div
                     animate={{ 
+<<<<<<< HEAD
                       x: active ? 3 : 0,
                       color: active ? path.dot : 'rgba(255,255,255,0.4)'
                     }}
                     className="absolute top-1/2 -translate-y-1/2 right-3"
                   >
                     <ArrowRight size={14} strokeWidth={2.5} />
+=======
+                      x: active ? 4 : 0,
+                      scale: active ? 1.2 : 1,
+                      color: active ? '#ffffff' : 'rgba(255,255,255,0.4)',
+                      opacity: active ? 1 : 0.6
+                    }}
+                    className="absolute top-1/2 -translate-y-1/2 right-4 drop-shadow-md z-10"
+                  >
+                    <ArrowRight size={16} strokeWidth={3} />
+>>>>>>> origin/main
                   </motion.div>
 
                   {/* Animated bottom gradient bar */}
                   <motion.div
+<<<<<<< HEAD
                     className="absolute bottom-0 left-0 h-[2px]"
+=======
+                    className="absolute bottom-0 left-0 h-[3px]"
+>>>>>>> origin/main
                     animate={{ width: active ? '100%' : '0%' }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                     style={{
                       background: `linear-gradient(90deg, ${path.dot}, ${path.accent})`,
+<<<<<<< HEAD
                       borderRadius: '0 0 16px 16px',
+=======
+>>>>>>> origin/main
                     }}
                   />
                 </motion.div>
@@ -604,9 +681,15 @@ function CareerPathTree({ onSelect }) {
         transition={{ delay: 0.6 }}
         className="text-center mt-6 flex justify-center"
       >
+<<<<<<< HEAD
         <p className="text-[10px] text-gray-400 font-medium px-3 py-1 rounded-full bg-white/50 border border-gray-100 shadow-sm">
           <motion.span
             className="inline-block w-1.5 h-1.5 bg-primary rounded-full mr-1.5 align-middle"
+=======
+        <p className="text-[11px] text-white/90 font-semibold px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-sm backdrop-blur-md">
+          <motion.span
+            className="inline-block w-2 h-2 bg-yellow-400 rounded-full mr-2 align-middle shadow-[0_0_8px_rgba(250,204,21,0.8)]"
+>>>>>>> origin/main
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
@@ -709,6 +792,36 @@ export default function Home() {
                 >
                   Know More
                 </Link>
+=======
+              <p className="text-white/90 text-base md:text-lg mb-8 max-w-lg leading-relaxed drop-shadow-md">
+                Shaping future technology leaders through quality education, hands-on training, and industry-aligned programs at <strong className="text-white">AJMVPS College, Ahilyanagar</strong>.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://nacsc-alumni.co.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/20 hover:-translate-y-0.5"
+                >
+                  Join Alumni Network <ExternalLink size={16} />
+                </a>
+                <Link
+                  to="/admin"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-white/20 text-white font-semibold rounded-xl hover:bg-white/30 border border-white/30 transition-all duration-200 backdrop-blur-sm"
+                >
+                  Sign In
+                </Link>
+                <a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Computer%20Science%20New%20Arts%20Commerce%20and%20Science%20College%20Ahmednagar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 text-white font-semibold rounded-xl hover:opacity-90 border border-white/30 transition-all duration-200 backdrop-blur-sm shadow-lg hover:-translate-y-0.5"
+                  style={{ backgroundColor: '#0A66C2' }}
+                >
+                  LinkedIn <Linkedin size={16} />
+                </a>
+>>>>>>> origin/main
               </div>
 
               {/* quick badges */}

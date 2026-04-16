@@ -117,9 +117,15 @@ export default function AboutCollege() {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
+<<<<<<< HEAD
           { title: 'Principal', name: 'Dr. B. B. Sagade', qualification: 'Ph.D.', experience: '20+ Years' },
           { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', qualification: 'Ph.D.', phone: '9763263275', experience: '15+ Years' },
           { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', qualification: 'Ph.D.', phone: '9403375734', experience: '15+ Years' },
+=======
+          { title: 'Principal', name: 'Dr. B. B. Sagade', qualification: 'Ph.D.', experience: '20+ Years', imageUrl: '/Information/teacher img/Dr. B. B. Sagade.jpeg' },
+          { title: 'Vice Principal (Science)', name: 'Dr. A. E. Athare', qualification: 'Ph.D.', phone: '9763263275', experience: '15+ Years', imageUrl: '/Information/teacher img/Dr. A. E. Athare.jpeg' },
+          { title: 'Vice Principal (Commerce)', name: 'Dr. S. B. Kalamkar', qualification: 'Ph.D.', phone: '9403375734', experience: '15+ Years', imageUrl: '/Information/teacher img/Dr. S. B. Kalamkar.jpeg' },
+>>>>>>> origin/main
         ].map(person => (
           <motion.div
             key={person.title}
@@ -130,7 +136,11 @@ export default function AboutCollege() {
             variants={fadeUp}
             className="flex items-center gap-5 bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow duration-300 cursor-pointer"
           >
+<<<<<<< HEAD
             <PlaceholderImage label={person.title} height="120px" className="w-28 shrink-0 !rounded-lg" />
+=======
+            <PlaceholderImage src={person.imageUrl} label={person.title} height="120px" className="w-28 shrink-0 !rounded-lg" />
+>>>>>>> origin/main
             <div>
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">{person.title}</span>
               <h3 className="text-lg font-bold text-navy mt-1">{person.name}</h3>

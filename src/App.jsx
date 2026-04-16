@@ -6,6 +6,11 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import NoticeTicker from './components/NoticeTicker';
 import Footer from './components/Footer';
+<<<<<<< HEAD
+import EnquiryPopup from './components/EnquiryPopup';
+=======
+import Chatbot from './components/Chatbot';
+>>>>>>> origin/main
 
 // Pages
 import Home from './pages/Home';
@@ -25,6 +30,10 @@ import Events from './pages/Events';
 import SkillDevelopment from './pages/SkillDevelopment';
 import SearchPage from './pages/Search';
 import StudentProjects from './pages/StudentProjects';
+<<<<<<< HEAD
+=======
+import Contact from './pages/Contact';
+>>>>>>> origin/main
 
 // Admin
 import AdminLogin from './pages/admin/AdminLogin';
@@ -41,11 +50,19 @@ function ScrollToTop() {
 function PublicLayout({ children }) {
   return (
     <>
+<<<<<<< HEAD
+      <EnquiryPopup />
+=======
+>>>>>>> origin/main
       <Header />
       <Navbar />
       <NoticeTicker />
       <main className="min-h-[60vh]">{children}</main>
       <Footer />
+<<<<<<< HEAD
+=======
+      <Chatbot />
+>>>>>>> origin/main
     </>
   );
 }
@@ -80,6 +97,10 @@ function App() {
             <Route path="/admission" element={<PublicLayout><Admission /></PublicLayout>} />
             <Route path="/events" element={<PublicLayout><Events /></PublicLayout>} />
             <Route path="/skill-development" element={<PublicLayout><SkillDevelopment /></PublicLayout>} />
+<<<<<<< HEAD
+=======
+            <Route path="/contact" element={<PublicLayout><Contact /></PublicLayout>} />
+>>>>>>> origin/main
 
             {/* Admin */}
             <Route path="/admin" element={<AdminLogin />} />

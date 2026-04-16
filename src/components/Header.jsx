@@ -19,6 +19,10 @@ const searchablePages = [
   { title: 'Admission', path: '/admission', description: 'Admission details' },
   { title: 'Events', path: '/events', description: 'College events' },
   { title: 'Skill Development', path: '/skill-development', description: 'Skill programs' },
+<<<<<<< HEAD
+=======
+  { title: 'Contact Us', path: '/contact', description: 'Get in touch with us' },
+>>>>>>> origin/main
 ];
 
 export default function Header() {
@@ -63,6 +67,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm py-2">
+<<<<<<< HEAD
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
         
         {/* Left side: College Logo, College Name Text & Dept Logo */}
@@ -96,6 +101,45 @@ export default function Header() {
           />
         </div>
 
+=======
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2 sm:gap-4">
+        
+        {/* Left: College Logo */}
+        <Link to="/" className="flex-shrink-0 transition-transform hover:scale-[1.01]">
+          <img 
+            src="/Information/Logo/College logo.png" 
+            alt="College Logo" 
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 object-contain" 
+          />
+        </Link>
+
+        {/* Middle: College Name Text (visible on all screens) */}
+        <div className="flex flex-col items-center sm:items-start text-center sm:text-left flex-1 px-1 sm:px-0">
+          <p className="text-[8px] sm:text-xs md:text-sm text-gray-600 font-bold tracking-wide uppercase leading-tight">
+            Ahmednagar Jilha Maratha Vidya Prasarak Samaj's
+          </p>
+          <h2 className="text-[9px] sm:text-sm md:text-xl font-bold text-red-700 mt-0.5 leading-tight">
+            New Arts, Commerce and Science College Ahmednagar (Autonomous)
+          </h2>
+          <h3 className="text-[8px] sm:text-xs md:text-sm font-semibold text-gray-800 mt-0.5 tracking-wide leading-tight">
+            Center for Advanced Studies in Applied Sciences (CASAS)
+          </h3>
+          <h1 className="text-[10px] sm:text-base md:text-3xl font-extrabold text-navy mt-0.5 tracking-wide leading-tight">
+            Department of Computer Science
+          </h1>
+        </div>
+
+        {/* Right: Department Logo */}
+        <img 
+          src="/Information/Logo/Department logo.png" 
+          alt="Department Logo" 
+          className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 object-contain flex-shrink-0"
+          onError={(e) => {
+            e.target.src = "/Information/Logo/College logo.png";
+          }}
+        />
+
+>>>>>>> origin/main
         {/* Right side: Tools and Department Logo */}
         <div className="flex shrink-0 items-center justify-end gap-4 md:gap-6">
           {/* Socials & A-Z List (hidden on small screens) */}
@@ -168,12 +212,16 @@ export default function Header() {
 
       </div>
       
+<<<<<<< HEAD
       {/* Mobile Text (Visible only on very small screens where middle text hides) */}
       <div className="sm:hidden px-4 pb-2 text-center">
         <p className="text-[10px] text-gray-600 font-semibold uppercase">Ahmednagar Jilha Maratha Vidya Prasarak Samaj's</p>
         <h2 className="text-xs font-bold text-red-700 mt-1">New Arts, Commerce and Science College Ahmednagar (Autonomous)</h2>
         <h1 className="text-sm font-extrabold text-navy mt-1">Department of Computer Science</h1>
       </div>
+=======
+
+>>>>>>> origin/main
     </header>
   );
 }
