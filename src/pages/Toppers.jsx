@@ -11,6 +11,7 @@ const fadeUp = {
 
 export default function Toppers() {
   const { data } = useData();
+<<<<<<< HEAD
   const years = [...new Set(data.toppers.map(t => t.year))].sort((a, b) => b - a);
   const [selectedYear, setSelectedYear] = useState(years[0] || '');
 
@@ -24,6 +25,14 @@ export default function Toppers() {
     { rank: 4, name: 'Sahil Jadhav', program: 'BCS', cgpa: '9.3' },
     { rank: 5, name: 'Megha Shinde', program: 'MCS', cgpa: '9.2' },
   ];
+=======
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: currentYear - 2015 + 1 }, (_, i) => (currentYear - i).toString());
+  const [selectedYear, setSelectedYear] = useState(years[0]);
+
+  const filteredToppers = data.toppers.filter(t => t.year?.toString() === selectedYear);
+  const sortedToppers = [...filteredToppers].sort((a, b) => parseInt(a.rank) - parseInt(b.rank));
+>>>>>>> origin/main
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -61,6 +70,7 @@ export default function Toppers() {
               </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
               {meritListData.map(row => (
                 <tr key={row.rank} className="border-t border-gray-50 hover:bg-section-bg/50 transition-colors">
                   <td className="px-4 py-3">
@@ -79,6 +89,32 @@ export default function Toppers() {
                   </td>
                 </tr>
               ))}
+=======
+              {sortedToppers.length > 0 ? (
+                sortedToppers.map((row, idx) => (
+                  <tr key={row.id || idx} className="border-t border-gray-50 hover:bg-section-bg/50 transition-colors">
+                    <td className="px-4 py-3">
+                      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold ${
+                        row.rank <= 3 ? 'bg-yellow-100 text-yellow-700' : 'bg-gray-100 text-gray-600'
+                      }`}>
+                        {row.rank || idx + 1}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 font-medium text-navy">{row.name}</td>
+                    <td className="px-4 py-3 text-gray-600">{row.program}</td>
+                    <td className="px-4 py-3">
+                      <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-semibold rounded-full">
+                        {row.cgpa}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                 <tr>
+                    <td colSpan="4" className="px-4 py-8 text-center text-gray-500 italic">No merit list data available for {selectedYear}.</td>
+                 </tr>
+              )}
+>>>>>>> origin/main
             </tbody>
           </table>
         </div>

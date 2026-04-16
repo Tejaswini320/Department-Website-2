@@ -22,7 +22,11 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
+<<<<<<< HEAD
               Empowering students with cutting-edge CS education since 1918. NAAC A++ Accredited (CGPA 3.79).
+=======
+              Empowering students with cutting-edge CS education since 1986. NAAC A++ Accredited (CGPA 3.79).
+>>>>>>> origin/main
             </p>
             <a
               href="https://newartscollege.ac.in"
@@ -42,7 +46,11 @@ export default function Footer() {
                 { label: 'About College',        path: '/about/college' },
                 { label: 'About Department',     path: '/about/department' },
                 { label: 'Admission',            path: '/admission' },
+<<<<<<< HEAD
                 { label: 'Curriculum / Syllabus',path: '/student-corner/curriculum' },
+=======
+                { label: 'Syllabus',path: '/student-corner/curriculum' },
+>>>>>>> origin/main
                 { label: 'Academic Schedules',   path: '/student-corner/schedules' },
                 { label: 'E-Learning',           path: '/e-learning' },
                 { label: 'Training & Placement', path: '/training-placement' },
@@ -83,8 +91,13 @@ export default function Footer() {
                 <div className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail size={13} className="text-primary" />
                 </div>
+<<<<<<< HEAD
                 <a href="mailto:cs@newartscollege.ac.in" className="text-sm text-gray-400 hover:text-white transition-colors">
                   cs@newartscollege.ac.in
+=======
+                <a href="mailto:computerscience@newartsdcs.ac.in" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  computerscience@newartsdcs.ac.in
+>>>>>>> origin/main
                 </a>
               </li>
               <li className="flex items-center gap-3">

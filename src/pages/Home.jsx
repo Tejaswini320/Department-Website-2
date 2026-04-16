@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { motion } from 'framer-motion';
+=======
+import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> origin/main
 import { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight, BookOpen, GraduationCap, Users, Award, Trophy,
   FileText, Clock, BarChart2, Lightbulb, MonitorSmartphone,
   MessageSquare, FlaskConical, ExternalLink, Calendar,
+<<<<<<< HEAD
   Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark
+=======
+  Code2, Database, Globe, ShieldCheck, Bot, Server, Landmark, Linkedin
+>>>>>>> origin/main
 } from 'lucide-react';
 import { useData } from '../context/DataContext';
 
@@ -463,23 +471,40 @@ function CareerPathTree({ onSelect }) {
             className="absolute -inset-7 rounded-full border border-dotted"
             style={{ borderColor: '#7B1D2415' }}
           />
+<<<<<<< HEAD
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7B1D24] to-[#C9973A] flex items-center justify-center shadow-lg shadow-[#7B1D24]/20 relative z-10">
+=======
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7B1D24] to-[#C9973A] flex items-center justify-center shadow-[0_0_20px_rgba(201,151,58,0.5)] relative z-10">
+>>>>>>> origin/main
             <span className="text-2xl">🎓</span>
           </div>
           <motion.div
             className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#7B1D24] to-[#C9973A]"
+<<<<<<< HEAD
             animate={{ opacity: [0.1, 0.25, 0.1] }}
             transition={{ duration: 3, repeat: Infinity }}
             style={{ filter: 'blur(10px)' }}
           />
           <p className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-400 whitespace-nowrap uppercase tracking-widest">
             CS Careers
+=======
+            animate={{ opacity: [0.15, 0.4, 0.15] }}
+            transition={{ duration: 3, repeat: Infinity }}
+            style={{ filter: 'blur(10px)' }}
+          />
+          <p className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[11px] font-bold text-white/80 whitespace-nowrap uppercase tracking-widest drop-shadow-md">
+            Computer Science Careers
+>>>>>>> origin/main
           </p>
         </div>
       </motion.div>
 
       {/* ── Career cards grid ── */}
+<<<<<<< HEAD
       <div className="grid grid-cols-2 gap-3 mt-2 relative z-10">
+=======
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 relative z-10">
+>>>>>>> origin/main
         {careerPaths.map((path, i) => {
           const active = hoveredId === path.id;
           return (
@@ -497,6 +522,7 @@ function CareerPathTree({ onSelect }) {
               >
                 {/* Outer glow */}
                 <motion.div
+<<<<<<< HEAD
                   className="absolute -inset-[2px] rounded-2xl"
                   animate={{
                     opacity: active ? 1 : 0,
@@ -506,11 +532,23 @@ function CareerPathTree({ onSelect }) {
                   style={{
                     background: `linear-gradient(135deg, ${path.dot}55, ${path.accent}55)`,
                     filter: 'blur(5px)',
+=======
+                  className="absolute -inset-[3px] rounded-[18px]"
+                  animate={{
+                    opacity: active ? 1 : 0,
+                    scale: active ? 1 : 0.98,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    background: `linear-gradient(135deg, ${path.dot}60, ${path.accent}60)`,
+                    filter: 'blur(8px)',
+>>>>>>> origin/main
                   }}
                 />
 
                 {/* Card body */}
                 <motion.div
+<<<<<<< HEAD
                   className="relative rounded-2xl p-4 border h-full flex flex-col justify-center bg-white/80"
                   animate={{
                     borderColor: active ? `${path.dot}40` : 'rgba(229,231,235,0.6)',
@@ -529,10 +567,38 @@ function CareerPathTree({ onSelect }) {
                     className="absolute top-0 right-0 w-16 h-16 transition-opacity duration-300 pointer-events-none rounded-tr-2xl"
                     style={{
                       background: `radial-gradient(circle at top right, ${path.dot}${active ? '15' : '05'}, transparent 70%)`,
+=======
+                  className="relative rounded-2xl p-5 border h-full flex flex-col justify-center bg-white/10 overflow-hidden"
+                  animate={{
+                    borderColor: active ? `${path.dot}80` : 'rgba(255,255,255,0.15)',
+                    y: active ? -4 : 0,
+                    boxShadow: active
+                      ? `0 20px 30px ${path.dot}40, 0 8px 15px rgba(0,0,0,0.3)`
+                      : '0 4px 10px rgba(0,0,0,0.2)',
+                  }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    backdropFilter: 'blur(12px)',
+                  }}
+                >
+                  {/* Subtle shine effect on hover */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 -translate-x-[150%]"
+                    animate={{ left: active ? '150%' : '-150%' }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  />
+
+                  {/* Corner accent */}
+                  <div
+                    className="absolute top-0 right-0 w-24 h-24 transition-opacity duration-500 pointer-events-none rounded-tr-2xl z-0"
+                    style={{
+                      background: `radial-gradient(circle at top right, ${path.dot}${active ? '30' : '10'}, transparent 70%)`,
+>>>>>>> origin/main
                     }}
                   />
 
                   {/* Icon + Title */}
+<<<<<<< HEAD
                   <div className="flex items-center gap-3 relative z-10 w-full">
                     <motion.div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -541,12 +607,23 @@ function CareerPathTree({ onSelect }) {
                           ? `linear-gradient(135deg, ${path.dot}, ${path.accent})`
                           : `${path.dot}10`,
                         boxShadow: active ? `0 4px 12px ${path.dot}30` : '0 0 0 transparent',
+=======
+                  <div className="flex items-start gap-4 relative z-10 w-full mb-1">
+                    <motion.div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                      animate={{
+                        background: active
+                          ? `linear-gradient(135deg, ${path.dot}, ${path.accent})`
+                          : `${path.dot}20`,
+                        boxShadow: active ? `0 4px 15px ${path.dot}50` : '0 2px 5px transparent',
+>>>>>>> origin/main
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.div
                         animate={{ 
                           color: active ? '#ffffff' : path.dot,
+<<<<<<< HEAD
                           scale: active ? 1.1 : 1 
                         }}
                         transition={{ duration: 0.2 }}
@@ -559,11 +636,29 @@ function CareerPathTree({ onSelect }) {
                       <motion.span
                         className="text-[13px] font-bold leading-tight block truncate"
                         animate={{ color: active ? path.dot : '#7B1D24' }}
+=======
+                          scale: active ? 1.15 : 1 
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <path.icon size={22} />
+                      </motion.div>
+                    </motion.div>
+
+                    <div className="flex-1 pr-6 flex flex-col justify-center min-h-[48px]">
+                      <motion.span
+                        className="text-[15px] font-bold leading-tight block drop-shadow"
+                        animate={{ color: active ? '#ffffff' : '#ffffff' }}
+>>>>>>> origin/main
                         transition={{ duration: 0.2 }}
                       >
                         {path.title}
                       </motion.span>
+<<<<<<< HEAD
                       <span className="text-[10px] text-gray-400 font-medium truncate block mt-0.5">
+=======
+                      <span className="text-[12px] text-white/80 font-medium block mt-1.5 leading-snug">
+>>>>>>> origin/main
                         {path.roles[0]}
                       </span>
                     </div>
@@ -572,22 +667,40 @@ function CareerPathTree({ onSelect }) {
                   {/* Resting arrow */}
                   <motion.div
                     animate={{ 
+<<<<<<< HEAD
                       x: active ? 3 : 0,
                       color: active ? path.dot : '#d1d5db'
                     }}
                     className="absolute top-1/2 -translate-y-1/2 right-3"
                   >
                     <ArrowRight size={14} strokeWidth={2.5} />
+=======
+                      x: active ? 4 : 0,
+                      scale: active ? 1.2 : 1,
+                      color: active ? '#ffffff' : 'rgba(255,255,255,0.4)',
+                      opacity: active ? 1 : 0.6
+                    }}
+                    className="absolute top-1/2 -translate-y-1/2 right-4 drop-shadow-md z-10"
+                  >
+                    <ArrowRight size={16} strokeWidth={3} />
+>>>>>>> origin/main
                   </motion.div>
 
                   {/* Animated bottom gradient bar */}
                   <motion.div
+<<<<<<< HEAD
                     className="absolute bottom-0 left-0 h-[2px]"
+=======
+                    className="absolute bottom-0 left-0 h-[3px]"
+>>>>>>> origin/main
                     animate={{ width: active ? '100%' : '0%' }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
                     style={{
                       background: `linear-gradient(90deg, ${path.dot}, ${path.accent})`,
+<<<<<<< HEAD
                       borderRadius: '0 0 16px 16px',
+=======
+>>>>>>> origin/main
                     }}
                   />
                 </motion.div>
@@ -604,9 +717,15 @@ function CareerPathTree({ onSelect }) {
         transition={{ delay: 0.6 }}
         className="text-center mt-6 flex justify-center"
       >
+<<<<<<< HEAD
         <p className="text-[10px] text-gray-400 font-medium px-3 py-1 rounded-full bg-white/50 border border-gray-100 shadow-sm">
           <motion.span
             className="inline-block w-1.5 h-1.5 bg-primary rounded-full mr-1.5 align-middle"
+=======
+        <p className="text-[11px] text-white/90 font-semibold px-4 py-1.5 rounded-full bg-white/10 border border-white/20 shadow-sm backdrop-blur-md">
+          <motion.span
+            className="inline-block w-2 h-2 bg-yellow-400 rounded-full mr-2 align-middle shadow-[0_0_8px_rgba(250,204,21,0.8)]"
+>>>>>>> origin/main
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
@@ -621,6 +740,10 @@ export default function Home() {
   const { data } = useData();
   const recentEvents = (data?.events?.cultural || []).slice(0, 3);
   const [selectedPath, setSelectedPath] = useState(null);
+<<<<<<< HEAD
+=======
+  const [showEventModal, setShowEventModal] = useState(false);
+>>>>>>> origin/main
 
   return (
     <div>
@@ -630,6 +753,7 @@ export default function Home() {
       )}
 
       {/* ══════════════════════ HERO ══════════════════════ */}
+<<<<<<< HEAD
       <section className="relative bg-gradient-to-br from-[#FDF9F5] via-[#FBF4EE] to-[#FDF9F5] overflow-hidden border-b border-gray-200">
         {/* decorative blobs */}
         <div className="absolute inset-0 pointer-events-none">
@@ -639,29 +763,71 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-20">
+=======
+      <section className="relative overflow-hidden border-b border-gray-200">
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute top-0 left-0 w-full h-full object-cover" 
+          style={{ zIndex: 0 }}
+        >
+          <source src="/Information/clgvideo.mp4" type="video/mp4" />
+        </video>
+
+        {/* Premium Gradient Overlay */}
+        <div className="absolute inset-0 z-[1]">
+          {/* Base color tint blending navy and primary */}
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-[#0a0a0a]/60 to-primary/50 mix-blend-multiply" />
+          {/* Cinematic Vignette to focus attention to center and ensure text readability at edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.7)_100%)]" />
+          {/* Subtle noise/texture pattern for premium feel */}
+          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+          {/* Extra dark tint at the bottom to smoothly transition into the next valid white section */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 py-14 md:py-20" style={{ zIndex: 2 }}>
+>>>>>>> origin/main
           <motion.div
             initial="hidden" animate="visible" variants={stagger}
             className="grid lg:grid-cols-2 gap-12 items-start"
           >
             {/* ── Left: Career Path Tree ── */}
             <motion.div variants={fadeUp}>
+<<<<<<< HEAD
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/15 text-navy text-xs font-semibold rounded-full mb-4 border border-primary/30">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+=======
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 text-white text-xs font-semibold rounded-full mb-4 border border-white/30 backdrop-blur-sm">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+>>>>>>> origin/main
                 CS Career Pathways — Click to Explore
               </span>
 
               <div className="mb-5">
+<<<<<<< HEAD
                 <h2 className="text-3xl font-extrabold text-navy">Computer Science</h2>
                 <p className="text-sm text-gray-500 mt-1">Tap any path to discover languages &amp; career roles</p>
               </div>
 
               <div className="bg-white/60 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm p-5">
+=======
+                <h2 className="text-3xl font-extrabold text-white drop-shadow-md">Computer Science</h2>
+                <p className="text-sm text-white/80 mt-1">Tap any path to discover languages &amp; career roles</p>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl p-5">
+>>>>>>> origin/main
                 <CareerPathTree onSelect={setSelectedPath} />
               </div>
             </motion.div>
 
             {/* ── Right: Department Info ── */}
             <motion.div variants={fadeUp} className="lg:pt-4">
+<<<<<<< HEAD
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-navy/10 text-navy text-xs font-bold tracking-widest uppercase rounded-full mb-6 border border-navy/20">
                 <span className="w-2 h-2 bg-navy rounded-full animate-pulse" />
                 NAAC A++ Accredited · CGPA 3.79
@@ -670,10 +836,21 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl font-extrabold text-navy mb-5 leading-tight">
                 <span className="text-3xl md:text-4xl text-gray-700 font-bold opacity-90">Department of</span><br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy via-navy to-primary">
+=======
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 text-white text-xs font-bold tracking-widest uppercase rounded-full mb-6 border border-white/30 backdrop-blur-sm">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
+                NAAC A++ Accredited · CGPA 3.79
+              </span>
+
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight drop-shadow-lg">
+                <span className="text-3xl md:text-4xl text-white/90 font-bold opacity-90">Department of</span><br />
+                <span className="text-yellow-400">
+>>>>>>> origin/main
                   Computer Science
                 </span>
               </h1>
 
+<<<<<<< HEAD
               <p className="text-gray-600 text-base md:text-lg mb-8 max-w-lg leading-relaxed">
                 Shaping future technology leaders through quality education, hands-on training, and industry-aligned programs at <strong className="text-navy">AJMVPS College, Ahilyanagar</strong>.
               </p>
@@ -691,21 +868,64 @@ export default function Home() {
                 >
                   Know More
                 </Link>
+=======
+              <p className="text-white/90 text-base md:text-lg mb-8 max-w-lg leading-relaxed drop-shadow-md">
+                Shaping future technology leaders through quality education, hands-on training, and industry-aligned programs at <strong className="text-white">AJMVPS College, Ahilyanagar</strong>.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://nacsc-alumni.co.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-hover transition-all duration-300 shadow-lg shadow-primary/20 hover:-translate-y-0.5"
+                >
+                  Join Alumni Network <ExternalLink size={16} />
+                </a>
+                <Link
+                  to="/admin"
+                  className="inline-flex items-center gap-2 px-7 py-3 bg-white/20 text-white font-semibold rounded-xl hover:bg-white/30 border border-white/30 transition-all duration-200 backdrop-blur-sm"
+                >
+                  Sign In
+                </Link>
+                <a
+                  href="https://www.linkedin.com/search/results/people/?keywords=Computer%20Science%20New%20Arts%20Commerce%20and%20Science%20College%20Ahmednagar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-7 py-3 text-white font-semibold rounded-xl hover:opacity-90 border border-white/30 transition-all duration-200 backdrop-blur-sm shadow-lg hover:-translate-y-0.5"
+                  style={{ backgroundColor: '#0A66C2' }}
+                >
+                  LinkedIn <Linkedin size={16} />
+                </a>
+>>>>>>> origin/main
               </div>
 
               {/* quick badges */}
               <div className="flex flex-wrap gap-3 mt-8">
+<<<<<<< HEAD
                 {['B.Sc. Computer Science', 'M.Sc. Computer Science', 'Est. 1918'].map(b => (
                   <span key={b} className="px-3 py-1 bg-navy/5 border border-navy/15 text-xs text-gray-600 rounded-full">{b}</span>
+=======
+                {['B.Sc. Computer Science', 'M.Sc. Computer Science', 'Est. 1986'].map(b => (
+                  <span key={b} className="px-3 py-1 bg-white/10 border border-white/20 text-xs text-white rounded-full backdrop-blur-sm">{b}</span>
+>>>>>>> origin/main
                 ))}
               </div>
 
               {/* Career paths legend */}
+<<<<<<< HEAD
               <div className="mt-8 p-4 bg-white/70 rounded-2xl border border-gray-100 shadow-sm">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Career Tracks at a Glance</p>
                 <div className="flex flex-wrap gap-2">
                   {careerPaths.map(p => (
                     <span key={p.id} className="flex items-center gap-1.5 px-2.5 py-1 bg-gray-50 border border-gray-200 rounded-full text-[11px] font-medium text-gray-700">
+=======
+              <div className="mt-8 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg">
+                <p className="text-[10px] font-bold text-white/70 uppercase tracking-widest mb-3">Career Tracks at a Glance</p>
+                <div className="flex flex-wrap gap-2">
+                  {careerPaths.map(p => (
+                    <span key={p.id} className="flex items-center gap-1.5 px-2.5 py-1 bg-white/20 border border-white/30 rounded-full text-[11px] font-medium text-white shadow-sm">
+>>>>>>> origin/main
                       <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: p.dot }} />
                       {p.title}
                     </span>
@@ -757,8 +977,13 @@ export default function Home() {
           >
             {/* Photo */}
             <motion.div variants={fadeUp} className="flex flex-col items-center text-center">
+<<<<<<< HEAD
               <div className="w-40 h-40 rounded-full bg-gradient-to-br from-navy to-primary flex items-center justify-center mb-4 shadow-xl shadow-navy/20">
                 <GraduationCap size={64} className="text-white/80" />
+=======
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-4 shadow-xl shadow-navy/20 border-4 border-primary/20">
+                <img src="/Information/teacher img/Prof. Arun D. Gangarde.jpeg" alt="Prof. A.D. Gangarde" className="w-full h-full object-cover" />
+>>>>>>> origin/main
               </div>
               <h3 className="font-bold text-navy text-lg">Prof. A.D. Gangarde</h3>
               <p className="text-primary text-sm font-medium">Head of Department</p>
@@ -799,9 +1024,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
+<<<<<<< HEAD
             className="grid grid-cols-2 md:grid-cols-4 gap-5"
           >
             <StatCard icon={Users}         value="220"  suffix="+"  label="Student Intake" />
+=======
+            className="grid grid-cols-2 md:grid-cols-5 gap-5"
+          >
+            <StatCard icon={Users}         value="180"  suffix="+"  label="UG Intake" />
+            <StatCard icon={Users}         value="60"               label="PG Intake" />
+>>>>>>> origin/main
             <StatCard icon={GraduationCap} value="12"              label="Expert Faculty" />
             <StatCard icon={FlaskConical}  value="4"               label="Modern Labs" />
             <StatCard icon={Trophy}        value="100"  suffix="%"  label="Pass Rate (UG)" />
@@ -818,12 +1050,19 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-navy">Programs Offered</h2>
             </motion.div>
 
+<<<<<<< HEAD
             <motion.div variants={stagger} className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 { title: 'FY B.Sc. CS', full: 'First Year Bachelor of Science (Computer Science)',  seats: 60, duration: '1 Year', level: 'UG', color: 'from-navy to-navy-light' },
                 { title: 'SY B.Sc. CS', full: 'Second Year Bachelor of Science (Computer Science)', seats: 60, duration: '1 Year', level: 'UG', color: 'from-[#9B2B34] to-[#C04050]' },
                 { title: 'TY B.Sc. CS', full: 'Third Year Bachelor of Science (Computer Science)',  seats: 60, duration: '1 Year', level: 'UG', color: 'from-[#A87A28] to-[#C9973A]' },
                 { title: 'M.Sc. CS',    full: 'Master of Science (Computer Science)',               seats: 40, duration: '2 Years', level: 'PG', color: 'from-[#5C1219] to-[#7B1D24]' },
+=======
+            <motion.div variants={stagger} className="grid md:grid-cols-2 gap-5">
+              {[
+                { title: 'B.Sc. CS', full: 'Bachelor of Science (Computer Science)',  seats: '180+', duration: '3 Years', level: 'UG', color: 'from-navy to-navy-light' },
+                { title: 'M.Sc. CS', full: 'Master of Science (Computer Science)',    seats: 60,  duration: '2 Years', level: 'PG', color: 'from-[#5C1219] to-[#7B1D24]' },
+>>>>>>> origin/main
               ].map((prog) => (
                 <motion.div
                   key={prog.title}
@@ -862,7 +1101,11 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeUp}>
+<<<<<<< HEAD
               <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full uppercase tracking-wider mb-3">Est. 1918</span>
+=======
+              <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full uppercase tracking-wider mb-3">Est. 1986</span>
+>>>>>>> origin/main
               <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">About Our College</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 AJMVPS New Arts, Commerce &amp; Science College, Ahilyanagar, is a premier institution committed to academic excellence for over a century. With a prestigious <strong>NAAC 'A++' accreditation (CGPA 3.79)</strong>, we stand among the leading colleges in Maharashtra.
@@ -875,13 +1118,18 @@ export default function Home() {
               </Link>
             </motion.div>
             <motion.div variants={fadeUp} className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 relative" style={{ height: '340px' }}>
+<<<<<<< HEAD
               <img src="/Information/Dept Event Photh/DSC_5077.JPG" alt="College Campus" className="w-full h-full object-cover" />
+=======
+              <img src="/Information/Dept Event Photh/clg.jpeg" alt="College Campus" className="w-full h-full object-cover" />
+>>>>>>> origin/main
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* ══════════════════════ LATEST EVENTS ══════════════════════ */}
+<<<<<<< HEAD
       {recentEvents.length > 0 && (
         <section className="bg-section-bg py-16">
           <div className="max-w-7xl mx-auto px-4">
@@ -933,6 +1181,128 @@ export default function Home() {
           </div>
         </section>
       )}
+=======
+      <section className="bg-section-bg py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+            <motion.div variants={fadeUp} className="flex items-end justify-between mb-10">
+              <div>
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full uppercase tracking-wider mb-3">Latest</span>
+                <h2 className="text-2xl md:text-3xl font-bold text-navy">Recent Events</h2>
+              </div>
+              <Link to="/events" className="hidden md:inline-flex items-center gap-1.5 text-primary font-semibold hover:gap-3 transition-all text-sm">
+                View All Events <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeUp}>
+              <button
+                onClick={() => setShowEventModal(true)}
+                className="w-full max-w-2xl mx-auto block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 group text-left"
+              >
+                <div className="relative overflow-hidden" style={{ height: '280px' }}>
+                  <img src="/Information/Dept Event Photh/DSC_3731.JPG" alt="Tech Srujana 2025" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full shadow-lg">🎉 Annual Fest</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-white/80 text-xs font-medium flex items-center gap-1 mb-2">
+                      <Calendar size={12} /> February 14, 2025
+                    </span>
+                    <h3 className="text-2xl font-extrabold text-white drop-shadow-lg">Tech Srujana 2025</h3>
+                    <p className="text-white/80 text-sm mt-1">Annual Technical & Cultural Festival</p>
+                  </div>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                    The flagship annual technical and cultural festival of the Computer Science Department featuring project exhibitions, coding competitions, tech talks, and cultural performances.
+                  </p>
+                  <div className="flex items-center gap-2 mt-3 text-primary text-xs font-bold">
+                    <span className="group-hover:gap-2 flex items-center gap-1 transition-all">Click to view details <ArrowRight size={12} /></span>
+                  </div>
+                </div>
+              </button>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="text-center mt-8 md:hidden">
+              <Link to="/events" className="inline-flex items-center gap-1.5 text-primary font-semibold hover:gap-3 transition-all text-sm">
+                View All Events <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Tech Srujana Event Modal */}
+      <AnimatePresence>
+        {showEventModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setShowEventModal(false)}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="bg-white rounded-3xl overflow-hidden max-w-3xl w-full shadow-2xl relative max-h-[90vh] overflow-y-auto"
+              onClick={e => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowEventModal(false)}
+                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white text-base font-bold transition-colors backdrop-blur-sm"
+              >✕</button>
+
+              {/* Hero Image */}
+              <div className="relative" style={{ height: '300px' }}>
+                <img src="/Information/Dept Event Photh/DSC_3731.JPG" alt="Tech Srujana 2025" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">🎉 Annual Fest</span>
+                  <h2 className="text-3xl font-extrabold text-white mt-3 drop-shadow-lg">Tech Srujana 2025</h2>
+                  <p className="text-white/80 text-sm mt-1">Annual Technical & Cultural Festival — February 14, 2025</p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <div className="mb-6">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">About the Event</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Tech Srujana is the flagship annual technical and cultural festival organized by the Department of Computer Science at AJMVPS New Arts, Commerce and Science College, Ahilyanagar. The event brings together students, faculty, and industry professionals for a day filled with innovation, creativity, and celebration.
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Event Highlights</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {['Project Exhibition', 'Coding Competition', 'Tech Talks', 'Cultural Performances', 'Quiz Contest', 'Prize Distribution'].map(h => (
+                      <div key={h} className="flex items-center gap-2 p-3 bg-section-bg rounded-xl border border-gray-100">
+                        <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                        <span className="text-sm font-medium text-gray-700">{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+
+
+
+                <div className="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                  <div className="text-xs text-gray-400">
+                    📍 AJMVPS College Campus, Ahilyanagar
+                  </div>
+                  <Link
+                    to="/events"
+                    onClick={() => setShowEventModal(false)}
+                    className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary-hover transition-colors shadow-md"
+                  >
+                    View All Events <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+>>>>>>> origin/main
 
       {/* ══════════════════════ GALLERY ══════════════════════ */}
       <section className="bg-white py-16">
@@ -948,6 +1318,7 @@ export default function Home() {
               </Link>
             </motion.div>
 
+<<<<<<< HEAD
             <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
                 { label: 'Programming Contest', src: '/Information/Dept Event Photh/DSC_3731.JPG' },
@@ -964,6 +1335,33 @@ export default function Home() {
                     alt={img.label}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+=======
+            {/* Masonry-style Gallery */}
+            <motion.div variants={fadeUp} className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px]">
+              {/* Large feature image */}
+              <div className="md:col-span-2 md:row-span-2 group overflow-hidden rounded-2xl relative cursor-pointer">
+                <img src="/Information/Dept Event Photh/DSC_3731.JPG" alt="Tech Srujana Event" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="text-white font-bold text-lg">Tech Srujana Event</span>
+                  <p className="text-white/70 text-xs mt-1">Annual Department Festival</p>
+                </div>
+              </div>
+
+              {[
+                { label: 'Faculty Interaction', src: '/Information/Dept Event Photh/IMG_0644.JPG' },
+                { label: 'Seminar Session', src: '/Information/Dept Event Photh/DSC_5039.JPG' },
+                { label: 'Prize Distribution', src: '/Information/Dept Event Photh/20220502114007_IMG_0728.JPG' },
+                { label: 'Lab Practicals', src: '/Information/Dept Event Photh/DSC_8014.JPG' },
+                { label: 'Workshop Session', src: '/Information/Dept Event Photh/DSC_5086.JPG' },
+              ].map((img, i) => (
+                <div key={img.label} className="group overflow-hidden rounded-2xl relative cursor-pointer">
+                  <img src={img.src} alt={img.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <span className="text-white font-semibold text-sm">{img.label}</span>
+                  </div>
+>>>>>>> origin/main
                 </div>
               ))}
             </motion.div>

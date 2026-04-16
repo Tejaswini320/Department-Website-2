@@ -7,7 +7,11 @@ const searchablePages = [
   { title: 'About Department', path: '/about/department', description: 'Information about the Computer Science department.' },
   { title: 'Administration', path: '/administration', description: 'Administrative staff and policies.' },
   { title: 'Academic Schedules', path: '/student-corner/schedules', description: 'Timetables and academic calendar.' },
+<<<<<<< HEAD
   { title: 'Curriculum', path: '/student-corner/curriculum', description: 'Course layout and syllabus.' },
+=======
+  { title: 'Syllabus', path: '/student-corner/curriculum', description: 'Syllabus for all programs.' },
+>>>>>>> origin/main
   { title: 'Results', path: '/student-corner/results', description: 'Examination results.' },
   { title: 'Student Corner', path: '/student-corner', description: 'Student portal including schedules, results, topics, feedback.' },
   { title: 'Merit List / Toppers', path: '/student-corner/toppers', description: 'List of academic top performers.' },

@@ -22,6 +22,12 @@ export function DataProvider({ children }) {
         const parsed = remoteData.data;
         if (!parsed.admins) parsed.admins = [...initialData.admins];
         if (!parsed.adminRequests) parsed.adminRequests = [];
+<<<<<<< HEAD
+=======
+        if (!parsed.trainings || parsed.trainings.length === 0) parsed.trainings = [...initialData.trainings];
+        if (!parsed.studyMaterials) parsed.studyMaterials = { ...initialData.studyMaterials };
+        if (!parsed.toppers || parsed.toppers.length === 0) parsed.toppers = [...initialData.toppers];
+>>>>>>> origin/main
         setData(parsed);
       } else if (error && error.code === 'PGRST116') {
         // No row found, let's insert the initial data

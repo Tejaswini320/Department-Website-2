@@ -16,7 +16,11 @@ const navItems = [
     label: 'Student Corner', path: '/student-corner',
     children: [
       { label: 'Academic Schedules', path: '/student-corner/schedules' },
+<<<<<<< HEAD
       { label: 'Curriculum', path: '/student-corner/curriculum' },
+=======
+      { label: 'Syllabus', path: '/student-corner/curriculum' },
+>>>>>>> origin/main
       { label: 'Results', path: '/student-corner/results' },
       { label: 'Merit List / Toppers', path: '/student-corner/toppers' },
       { label: 'Student Projects', path: '/student-corner/projects' },
@@ -29,6 +33,10 @@ const navItems = [
   { label: 'Alumni', path: 'https://nacsc-alumni.co.in/', external: true },
   { label: 'Events', path: '/events' },
   { label: 'Online Feedback', path: '/student-corner/feedback' },
+<<<<<<< HEAD
+=======
+  { label: 'Contact Us', path: '/contact' },
+>>>>>>> origin/main
 ];
 
 export default function Navbar() {
