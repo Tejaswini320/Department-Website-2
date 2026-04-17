@@ -1,5 +1,5 @@
 import { useState } from 'react';
-<<<<<<< HEAD
+
 
 /* ─── Inline CSS ──────────────────────────────────────────────── */
 const css = `
