@@ -137,11 +137,7 @@ export default function Admission() {
               </div>
               <div>
                 <p className="text-xs text-gray-500">Email</p>
-<<<<<<< HEAD
                 <p className="font-medium text-navy">cs@newartscollege.ac.in</p>
-=======
-                <p className="font-medium text-navy">computerscience@newartsdcs.ac.in</p>
->>>>>>> origin/main
               </div>
             </div>
             <div className="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200 flex items-start gap-2">

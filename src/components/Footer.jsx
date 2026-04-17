@@ -83,13 +83,8 @@ export default function Footer() {
                 <div className="w-7 h-7 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail size={13} className="text-primary" />
                 </div>
-<<<<<<< HEAD
                 <a href="mailto:cs@newartscollege.ac.in" className="text-sm text-gray-400 hover:text-white transition-colors">
                   cs@newartscollege.ac.in
-=======
-                <a href="mailto:computerscience@newartsdcs.ac.in" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  computerscience@newartsdcs.ac.in
->>>>>>> origin/main
                 </a>
               </li>
               <li className="flex items-center gap-3">
